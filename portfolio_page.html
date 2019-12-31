@@ -13,6 +13,13 @@ body {
   transition: background-color .5s;
 }
 
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+}
+
 .sidenav {
   height: 100%;
   width: 0;
@@ -77,6 +84,17 @@ body {
   <p class="w3-opacity"><i> See below for more information</i></p>
 </section>
 
+
+<div id="main">Portfolio</h2>
+  <p>Click on the menu below to choose an option from the portfolio.</p>
+  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+</div>
+
+<!-- setting up main page image -->
+<div id="mainasthetics" class="center">
+   <img src="portfolioimage.png" alt="Trulli" width="1000" height="400" class="center">  	
+</div>
+
 <!-- Navigation area -->
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -86,10 +104,6 @@ body {
   <a href="courses_page.html">Courses</a>
 </div>
 
-<div id="main">Portfolio</h2>
-  <p>Click on the menu below to choose an option from the portfolio.</p>
-  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
-</div>
 
 <script>
 function openNav() {
