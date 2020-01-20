@@ -7,6 +7,7 @@
 
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 * {
   box-sizing: border-box;
@@ -15,7 +16,7 @@
 /* Add a gray background color with some padding */
 body {
   font-family: Arial;
-  padding: 20px;
+  padding: 0px;
   background: #f1f1f1;
 }
 
@@ -85,9 +86,33 @@ body {
   }
 }
 </style>
+
+<style>
+.collapsible {
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.active, .collapsible:hover {
+  background-color: #555;
+}
+
+.content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #f1f1f1;
+}
+</style>
 </head>
-
-
 <body>
 
 <!-- Content will go here -->
@@ -108,70 +133,88 @@ body {
 </section>
 
 <div class="row">
-
   <!-- BLOGS GO HERE -->
   <div class="leftcolumn">
 
-    <!-- Graaph Genomes blog -->	  
+    <!-- Graph Genomes blog STARTS HERE -->
     <div class="card">
       <h2> Graph Genomes.. thoughts.</h2>
       <h5> Blog #1 on graph genomes, 12/29/2019 </h5>
+
+      <!-- BUTTON #1 AND BLOG IS BELOW -->
+      <button class="collapsible">Blog #1 on graph genomes, 12/29/2019 (Click Here)</button>
+      <div class="content">
       <p>My thoughts..</p>
-      <p> I recently stumbled across the idea of graph genomes, and I will continue 
+      <p> I recently stumbled across the idea of graph genomes, and I will continue
           digging into this area. Here I will discuss my thoughts about HISAT2 (Kim et al.).
       </p>
-          
-      <p> 
+      <p>
           Traditionally reference genomes are used for read alignment, but there are drawbacks
-          to such an approach, such as lacking information about various structural variants. 
-	  A graph genome is a graph representation of the genome, and it can contain all of the 
-	  known haplotypes and various loci not present within one genomic representation. Problems 
-	  with graph genomes include traversing the genome itself. This can be incredibly time 
-	  consuming as well as memory inefficient. 
+          to such an approach, such as lacking information about various structural variants.
+	  A graph genome is a graph representation of the genome, and it can contain all of the
+	  known haplotypes and various loci not present within one genomic representation. Problems
+	  with graph genomes include traversing the genome itself. This can be incredibly time
+	  consuming as well as memory inefficient.
 
 	  Graph genomes are constructed based on the genomic variations. Wherever there is variation,
-	  a new edge is added, thereby creating paths where variation exists: 
+	  a new edge is added, thereby creating paths where variation exists:
       </p>
       <img src="graph_genome_variants.png" alt="Trulli" width="500" height="333" class="center">
-      <p> 
-          Previous graph genome implmentations include vg (<a href="https://github.com/vgteam/vg">github.com/vgteam/vg</a>), 
+      <p>
+          Previous graph genome implmentations include vg (<a href="https://github.com/vgteam/vg">github.com/vgteam/vg</a>),
 	  Graph Genome Pipeline (GGP; <a href="https://www.ncbi.nlm.nih.gov/pubmed/30643257">
           https://www.ncbi.nlm.nih.gov/pubmed/30643257</a>), and now HISAT2 (<a href="https://www.nature.com/articles/s41587-019-0201-4">HISAT2</a>). Problems existing with graph genomes could be from lacking variant information
           potentially not captured using short reads. However, it is speculated that long reads along with improved
 	  alignemnt could fix these problems (Ameur, 2019).
-      </p>
+       </p>
+     </div>
+     <!-- BUTTON #1 graph genomes ends here -->
+       
     </div>
-     
+    <!-- Graph Genomes blog ENDS HERE -->
+
   </div>
-  
-  <!-- THE RIGHT COLUMN -->
+  <!-- THIS ENDS THE LEFT COLUMN -->
+
+  <!-- THIS STARTS RIGHT COLUMN -->
   <div class="rightcolumn">
     <div class="card">
       <h2>About This Blog</h2>
       <img src="computerandbacteria.png" alt="Trulli" width="500" height="100" class="center">
       <p>Welcome to the blog that aims to fuse computer science, synthetic biology, and applied mathematics.</p>
     </div>
-    <div class="card">
-      <h3>Popular Post</h3>
-      <div class="fakeimg">Image</div><br>
-      <div class="fakeimg">Image</div><br>
-      <div class="fakeimg">Image</div>
-    </div>
   </div>
-
+  <!-- THIS ENDS RIGHT COLUMN -->
+  
 </div>
+
+<!-- Javascript used to make expandable blog.-->
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    } 
+  });
+}
+</script>
 
 
 
 <!-- Footer -->
 <footer class="w3-container w3-padding-64 w3-center w3-black w3-xlarge">
-  <a href="#"><i class="fa fa-facebook-official"></i></a>
-  <a href="#"><i class="fa fa-pinterest-p"></i></a>
-  <a href="#"><i class="fa fa-twitter"></i></a>
-  <a href="#"><i class="fa fa-flickr"></i></a>
-  <a href="#"><i class="fa fa-linkedin"></i></a>
+  <a href="https://www.facebook.com/dreycey.albin"><i class="fa fa-facebook-official"></i></a>
+  <a href="https://twitter.com/dreycey"><i class="fa fa-twitter"></i></a>
+  <a href="https://www.linkedin.com/in/dreycey/"><i class="fa fa-linkedin"></i></a>
 </footer>
-
-
 </body>
 </html>
+
+
