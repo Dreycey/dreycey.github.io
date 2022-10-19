@@ -1,6 +1,6 @@
 /**
-* Template Name: Hidayah - v4.9.1
-* Template URL: https://bootstrapmade.com/hidayah-free-simple-html-template-for-corporate/
+* Template Name: Lonely - v4.9.1
+* Template URL: https://bootstrapmade.com/free-html-bootstrap-template-lonely/
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
@@ -67,6 +67,10 @@
     let header = select('#header')
     let offset = header.offsetHeight
 
+    if (!header.classList.contains('header-scrolled')) {
+      offset -= 16
+    }
+
     let elementPos = select(el).offsetTop
     window.scrollTo({
       top: elementPos - offset,
@@ -75,13 +79,23 @@
   }
 
   /**
-   * Preloader
+   * Header fixed top on scroll
    */
-  let preloader = select('#preloader');
-  if (preloader) {
-    window.addEventListener('load', () => {
-      preloader.remove()
-    });
+  let selectHeader = select('#header')
+  if (selectHeader) {
+    let headerOffset = selectHeader.offsetTop
+    let nextElement = selectHeader.nextElementSibling
+    const headerFixed = () => {
+      if ((headerOffset - window.scrollY) <= 0) {
+        selectHeader.classList.add('fixed-top')
+        nextElement.classList.add('scrolled-offset')
+      } else {
+        selectHeader.classList.remove('fixed-top')
+        nextElement.classList.remove('scrolled-offset')
+      }
+    }
+    window.addEventListener('load', headerFixed)
+    onscroll(document, headerFixed)
   }
 
   /**
@@ -149,49 +163,14 @@
   });
 
   /**
-   * Hero carousel indicators
-   */
-  let heroCarouselIndicators = select("#hero-carousel-indicators")
-  let heroCarouselItems = select('#heroCarousel .carousel-item', true)
-
-  heroCarouselItems.forEach((item, index) => {
-    (index === 0) ?
-    heroCarouselIndicators.innerHTML += "<li data-bs-target='#heroCarousel' data-bs-slide-to='" + index + "' class='active'></li>":
-      heroCarouselIndicators.innerHTML += "<li data-bs-target='#heroCarousel' data-bs-slide-to='" + index + "'></li>"
-  });
-
-  /**
-   * Initiate glightbox 
-   */
-  const glightbox = GLightbox({
-    selector: '.glightbox'
-  });
-
-  /**
-   * Skills animation
-   */
-  let skilsContent = select('.skills-content');
-  if (skilsContent) {
-    new Waypoint({
-      element: skilsContent,
-      offset: '80%',
-      handler: function(direction) {
-        let progress = select('.progress .progress-bar', true);
-        progress.forEach((el) => {
-          el.style.width = el.getAttribute('aria-valuenow') + '%'
-        });
-      }
-    })
-  }
-
-  /**
    * Porfolio isotope and filter
    */
   window.addEventListener('load', () => {
     let portfolioContainer = select('.portfolio-container');
     if (portfolioContainer) {
       let portfolioIsotope = new Isotope(portfolioContainer, {
-        itemSelector: '.portfolio-item'
+        itemSelector: '.portfolio-item',
+        layoutMode: 'fitRows'
       });
 
       let portfolioFilters = select('#portfolio-flters li', true);
@@ -232,6 +211,51 @@
       el: '.swiper-pagination',
       type: 'bullets',
       clickable: true
+    }
+  });
+
+  /**
+   * Skills animation
+   */
+  let skilsContent = select('.skills-content');
+  if (skilsContent) {
+    new Waypoint({
+      element: skilsContent,
+      offset: '80%',
+      handler: function(direction) {
+        let progress = select('.progress .progress-bar', true);
+        progress.forEach((el) => {
+          el.style.width = el.getAttribute('aria-valuenow') + '%'
+        });
+      }
+    })
+  }
+
+  /**
+   * Testimonials slider
+   */
+  new Swiper('.testimonials-slider', {
+    speed: 600,
+    loop: true,
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false
+    },
+    slidesPerView: 'auto',
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'bullets',
+      clickable: true
+    },
+    breakpoints: {
+      320: {
+        slidesPerView: 1,
+        spaceBetween: 40
+      },
+
+      1200: {
+        slidesPerView: 3,
+      }
     }
   });
 
