@@ -14,12 +14,12 @@ body {
 }
 
 a {
-  color: #d43076;
+  color: #544f51;
   text-decoration: none;
 }
 
 a:hover {
-  color: #dd5a92;
+  color: #797577;
   text-decoration: none;
 }
 
@@ -42,7 +42,7 @@ h6 {
   right: 15px;
   bottom: 15px;
   z-index: 9999;
-  background: #d43076;
+  background: #575656;
   width: 40px;
   height: 40px;
   border-radius: 50px;
@@ -56,7 +56,7 @@ h6 {
 }
 
 .back-to-top:hover {
-  background: #db528c;
+  background: #b8b0b4;
   color: #fff;
 }
 
@@ -148,7 +148,7 @@ h6 {
 .navbar .active,
 .navbar .active:focus,
 .navbar li:hover>a {
-  color: #d43076;
+  color: #7c787a;
 }
 
 .navbar .dropdown ul {
@@ -183,7 +183,7 @@ h6 {
 .navbar .dropdown ul a:hover,
 .navbar .dropdown ul .active:hover,
 .navbar .dropdown ul li:hover>a {
-  color: #d43076;
+  color: #282627;
 }
 
 .navbar .dropdown:hover>ul {
@@ -282,7 +282,7 @@ h6 {
 .navbar-mobile a:hover,
 .navbar-mobile .active,
 .navbar-mobile li:hover>a {
-  color: #d43076;
+  color: #3c393a;
 }
 
 .navbar-mobile .getstarted,
@@ -317,7 +317,7 @@ h6 {
 .navbar-mobile .dropdown ul a:hover,
 .navbar-mobile .dropdown ul .active:hover,
 .navbar-mobile .dropdown ul li:hover>a {
-  color: #d43076;
+  color: #2c282a;
 }
 
 .navbar-mobile .dropdown>.dropdown-active {
@@ -330,7 +330,7 @@ h6 {
 #hero {
   width: 100%;
   height: 75vh;
-  background: url("../img/hero-bg.jpg") top center;
+  background: url("../img/pc_background.png") top center;
   background-size: cover;
   padding: 0 15px;
 }
@@ -360,7 +360,7 @@ h6 {
 
 #hero .btn-get-started:hover {
   padding-top: 10px;
-  color: #d43076;
+  color: #a79ba1;
 }
 
 @media (min-width: 1024px) {
@@ -412,7 +412,7 @@ section {
   display: block;
   width: 50px;
   height: 3px;
-  background: #d43076;
+  background: #000000;
   bottom: 0;
   left: 0;
 }
@@ -494,7 +494,7 @@ section {
 .about .content .count-box i {
   display: block;
   font-size: 36px;
-  color: #eeafca;
+  color: #777274;
   float: left;
   line-height: 0;
 }
@@ -578,14 +578,14 @@ section {
 }
 
 .skills .progress-bar-wrap {
-  background: #fbeaf1;
+  background: #d9d5d5;
 }
 
 .skills .progress-bar {
   width: 1px;
   height: 10px;
   transition: 0.9s;
-  background-color: #dd5a92;
+  background-color: #000000;
 }
 
 /*--------------------------------------------------------------
@@ -603,7 +603,7 @@ section {
 .resume .resume-item {
   padding: 0 0 20px 20px;
   margin-top: -2px;
-  border-left: 2px solid #d43076;
+  border-left: 2px solid #363535;
   position: relative;
 }
 
@@ -646,7 +646,7 @@ section {
   left: -9px;
   top: 0;
   background: #fff;
-  border: 2px solid #d43076;
+  border: 2px solid #635c5f;
 }
 
 /*--------------------------------------------------------------
@@ -676,7 +676,7 @@ section {
 }
 
 .services .icon-box:hover::before {
-  background: #d43076;
+  background: #3d393a;
   height: 100%;
   border-radius: 0px;
 }
@@ -689,7 +689,7 @@ section {
   border-radius: 50%;
   width: 60px;
   height: 60px;
-  background: #d43076;
+  background: #4e4a4b;
   transition: all 0.3s ease-in-out;
 }
 
@@ -1024,7 +1024,7 @@ section {
   font-weight: 300;
   letter-spacing: 3px;
   text-transform: uppercase;
-  color: #d43076;
+  color: #6d6a6c;
 }
 
 .contact .contact-about p {
@@ -1039,23 +1039,23 @@ section {
 }
 
 .contact .social-links a {
-  font-size: 18px;
+  font-size: 40px;
   display: inline-block;
   background: #fff;
-  color: #d43076;
+  color: #040406;
   line-height: 0;
-  padding: 8px 0;
-  margin-right: 4px;
+  padding: 16px 0;
+  margin-right: 8px;
   border-radius: 50%;
   text-align: center;
-  width: 36px;
-  height: 36px;
+  width: 72px;
+  height: 72px;
   transition: 0.3s;
-  border: 1px solid #d43076;
+  border: 1px solid #000000;
 }
 
 .contact .social-links a:hover {
-  background: #d43076;
+  background: #0901ed;
   color: #fff;
 }
 
@@ -1065,7 +1065,7 @@ section {
 
 .contact .info i {
   font-size: 32px;
-  color: #d43076;
+  color: #383436;
   line-height: 0;
   margin-right: 15px;
 }
@@ -1126,11 +1126,11 @@ section {
 
 .contact .php-email-form input:focus,
 .contact .php-email-form textarea:focus {
-  border-color: #d43076;
+  border-color: #212020;
 }
 
 .contact .php-email-form button[type=submit] {
-  background: #d43076;
+  background: #272627;
   border: 0;
   padding: 10px 24px;
   color: #fff;
@@ -1139,7 +1139,7 @@ section {
 }
 
 .contact .php-email-form button[type=submit]:hover {
-  background: #dd5a92;
+  background: #0339fe;
 }
 
 @-webkit-keyframes animate-loading {
