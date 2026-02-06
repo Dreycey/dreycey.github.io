@@ -1,0 +1,14 @@
+[
+  {
+    "category": "ML & Research",
+    "items": ["PyTorch", "TensorFlow", "Scikit-Learn", "CUDA", "Distributed Training (DeepSpeed)", "RAG", "AutoML", "Computer Vision", "NLP"]
+  },
+  {
+    "category": "Systems & Infrastructure",
+    "items": ["Service Fabric", "Kubernetes", "Docker", "Azure/AWS", "Linux/Git"]
+  },
+  {
+    "category": "Languages & Data",
+    "items": ["Python", "C++", "C#", "Rust", "SQL (Postgres)", "NoSQL (Kusto/MongoDB)"]
+  }
+]

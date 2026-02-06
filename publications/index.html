@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publications - Dreycey Albin</title>
+    <link rel="stylesheet" href="../assets/css/base.css">
+    <link rel="stylesheet" href="../assets/css/components.css">
+</head>
+<body>
+    <div id="site-header"></div>
+
+    <main class="container">
+        <h1>Publications</h1>
+        
+        <div class="card" style="margin-bottom: 2rem;">
+            <div class="filters" style="margin-bottom: 0;">
+                <div style="flex: 2; min-width: 200px;">
+                    <input type="text" id="q" class="form-control" placeholder="Search titles, authors, tags...">
+                </div>
+                <div style="flex: 1; min-width: 120px;">
+                    <select id="year" class="form-control">
+                        <option value="">All Years</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div id="pub-list">
+            <p>Loading publications...</p>
+        </div>
+    </main>
+
+    <div id="site-footer"></div>
+
+    <script src="../assets/js/render.js"></script>
+    <script src="../assets/js/publications.js"></script>
+</body>
+</html>

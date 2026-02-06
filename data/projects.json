@@ -1,0 +1,65 @@
+[
+  {
+    "name": "EnrichSeq",
+    "desc": "A bioinformatics pipeline for phage enrichment analysis.",
+    "href": "https://github.com/Dreycey/Phage-EnrichSeq",
+    "stack": "Python / Nextflow / Bash",
+    "image": "assets/img/portfolio/portfolio-1.png"
+  },
+  {
+    "name": "PhageBox",
+    "desc": "Embedded system for bacteriophage research automation.",
+    "href": "https://github.com/Dreycey/PhageBox",
+    "stack": "C/C++",
+    "image": "assets/img/portfolio/phagebox.png"
+  },
+  {
+    "name": "Touching LEDs",
+    "desc": "Embedded C project.",
+    "href": "https://github.com/Dreycey/embedded_tochingLEDs",
+    "stack": "C",
+    "image": "assets/img/portfolio/touching_leds.png"
+  },
+  {
+    "name": "Smell-ML",
+    "desc": "Machine learning project involving olfactory data.",
+    "href": "https://github.com/Dreycey/SmellML",
+    "stack": "Python",
+    "image": "assets/img/portfolio/smellml.png"
+  },
+  {
+    "name": "DIPPS",
+    "desc": "Database project for protein structures.",
+    "href": "https://github.com/Dreycey/DIPSS",
+    "stack": "SQL / Postgres / Python",
+    "image": "assets/img/portfolio/dipps_protein.png"
+  },
+  {
+    "name": "kmerCatcher",
+    "desc": "Rust-based tool for k-mer analysis.",
+    "href": "https://github.com/Dreycey/KmerCatcher",
+    "stack": "Rust",
+    "image": "assets/img/portfolio/kmercatcher.png"
+  },
+  {
+    "name": "Metscale",
+    "desc": "Metagenomics analysis workflow.",
+    "href": "https://github.com/signaturescience/metscale",
+    "stack": "Snakemake / Python",
+    "image": "assets/img/portfolio/metscale.png"
+  },
+  {
+    "name": "SeqScreen",
+    "desc": "Sequence screening pipeline.",
+    "href": "https://gitlab.com/treangenlab/seqscreen",
+    "stack": "Python / Bash / Nextflow",
+    "image": "assets/img/portfolio/seqscreen.png"
+  },
+  {
+    "name": "Kvar",
+    "desc": "Bioinformatics tool.",
+    "href": "https://github.com/collaborativebioinformatics/kvar",
+    "stack": "Bash / Python / R",
+    "image": "assets/img/portfolio/kvar.png"
+  }
+]

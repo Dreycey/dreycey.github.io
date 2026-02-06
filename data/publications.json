@@ -1,0 +1,185 @@
+[
+  {
+    "id": "phagescanner-2024",
+    "title": "PhageScanner: a reconfigurable machine learning framework for bacteriophage genomic and metagenomic feature annotation",
+    "year": 2024,
+    "type": "journal",
+    "venue": "Frontiers in Microbiology",
+    "authors": ["Dreycey Albin", "Michelle Ramsahoye", "Eitan Kochavi", "Mirela Alistar"],
+    "tags": ["machine learning", "bacteriophage", "metagenomics"],
+    "abstract": "A reconfigurable machine learning framework for bacteriophage genomic and metagenomic feature annotation.",
+    "links": {
+      "paper": "https://www.frontiersin.org/journals/microbiology/articles/10.3389/fmicb.2024.1446097/full",
+      "code": "https://github.com/Dreycey/PhageScanner"
+    },
+    "featured": true
+  },
+  {
+    "id": "phagebox-2023",
+    "title": "PhageBox: an open source digital microfluidic extension with applications for phage discovery",
+    "year": 2023,
+    "type": "journal",
+    "venue": "IEEE TBME",
+    "authors": ["Dreycey Albin", "Lukas Buecherl", "Eitan Kochavi", "Elise Niehaus", "Sasha Novack", "Shenali Uragoda", "Chris J. Myers", "Mirela Alistar"],
+    "tags": ["microfluidics", "phage discovery", "open source"],
+    "abstract": "An Open Source Digital Microfluidic Extension with Applications for Phage Discovery.",
+    "links": {
+      "paper": "https://pubmed.ncbi.nlm.nih.gov/37450356/",
+      "code": "https://github.com/Dreycey/PhageBox"
+    },
+    "featured": true
+  },
+  {
+    "id": "seqscreen-2022",
+    "title": "SeqScreen: accurate and sensitive functional screening of pathogenic sequences via ensemble learning",
+    "year": 2022,
+    "type": "journal",
+    "venue": "Genome Biology",
+    "authors": ["Advait Balaji", "Bryce Kille", "Anthony D. Kappell", "Gene D. Godbold", "Madeline Diep", "R. A. Leo Elworth", "Zhiqin Qian", "Dreycey Albin", "Daniel J. Nasko", "Nidhi Shah", "Mihai Pop", "Santiago Segarra", "Krista L. Ternus", "Todd J. Treangen"],
+    "tags": ["pathogen screening", "ensemble learning", "bioinformatics"],
+    "abstract": "Accurate and sensitive functional screening of pathogenic sequences via ensemble learning.",
+    "links": {
+      "paper": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9208262/",
+      "code": "https://gitlab.com/treangenlab/seqscreen"
+    },
+    "featured": true
+  },
+  {
+    "id": "phagescanner-preprint-2023",
+    "title": "PhageScanner, a flexible machine learning pipeline for automated bacteriophage genomic and metagenomic feature annotation",
+    "year": 2023,
+    "type": "preprint",
+    "venue": "bioRxiv",
+    "authors": ["Dreycey Albin", "Mirela Alistar"],
+    "tags": ["machine learning", "bacteriophage", "metagenomics"],
+    "abstract": "Preprint describing the PhageScanner pipeline.",
+    "links": {
+      "paper": "https://www.biorxiv.org/content/10.1101/2023.07.17.549438v1",
+      "code": "https://github.com/Dreycey/PhageScanner"
+    },
+    "featured": false
+  },
+  {
+    "id": "tcdd-2022",
+    "title": "TCDD exposure alters fecal IgA concentrations in male and female mice",
+    "year": 2022,
+    "type": "journal",
+    "venue": "BMC Pharmacology and Toxicology",
+    "authors": ["Christine L. Foxx", "Madeline R. Nagy", "Aspen E. King", "Dreycey Albin", "Gregory K. DeKrey"],
+    "tags": ["toxicology", "immunology"],
+    "abstract": "Study on the effects of TCDD exposure on fecal IgA concentrations.",
+    "links": {
+      "paper": "https://link.springer.com/article/10.1186/s40360-022-00563-9"
+    },
+    "featured": false
+  },
+  {
+    "id": "sars-cov-2-diversity-2021",
+    "title": "SARS-CoV-2 genomic diversity and the implications for qRT-PCR diagnostics and transmission",
+    "year": 2021,
+    "type": "journal",
+    "venue": "Genome Research",
+    "authors": ["Nicolae Sapoval", "Medhat Mahmoud", "Michael D. Jochum", "Yunxi Liu", "R. A. Leo Elworth", "Qi Wang", "Dreycey Albin", "Huw Ogilvie", "Michael D. Lee", "Sonia Villapol", "Kyle M. Hernandez", "Irina Maljkovic Berry", "Jonathan Foox", "Afshin Beheshti", "Krista L. Ternus", "Kjersti M. Aagaard", "David Posada", "Christopher E. Mason", "Fritz J. Sedlazeck", "Todd J. Treangen"],
+    "tags": ["SARS-CoV-2", "genomics", "diagnostics"],
+    "abstract": "Investigation into the hidden genomic diversity of SARS-CoV-2.",
+    "links": {
+      "paper": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8015855/",
+      "code": "https://github.com/artic-network"
+    },
+    "featured": false
+  },
+  {
+    "id": "hackathon-2021",
+    "title": "An international virtual hackathon to build tools for the analysis of structural variants within species ranging from coronaviruses to vertebrates",
+    "year": 2021,
+    "type": "article",
+    "venue": "F1000Research",
+    "authors": ["Medhat Mahmoud", "Alejandro Rafael Gener", "Michael M. Khayat", "Adam C. English", "Advait Balaji", "Anbo Zhou", "Andreas Hehn", "Arkarachai Fungtammasan", "Brianna Sierra Chrisman", "Chen-Shan Chin", "Chiao-Feng Lin", "Chun-Hsuan Lo", "Chunxiao Liao", "Claudia M. B. Carvalho", "Colin Diesh", "David E. Symer", "Divya Kalra", "Dreycey Albin", "Elbay Aliyev", "Eric T. Dawson", "Eric Venner", "Fernanda Foertter", "Gigon Bae", "Haowei Du", "Joyjit Daw", "Junzhou Wang", "Keiko Akagi", "Lon Phan", "Michael Jochum", "Mohammadamin Edrisi", "Nirav N. Shah", "Qi Wang", "Robert Fullem", "Rong Zheng", "Sara E Kalla", "Shakuntala Mitra", "Todd J. Treangen", "Vaidhyanathan Mahaganapathy", "Venkat Sai Malladi", "Vipin K Menon", "Yilei Fu", "Yongze Yin", "Yuanqing Feng", "Tim Hefferon", "Fritz J. Sedlazeck", "Ben Busby"],
+    "tags": ["structural variation", "codeathon"],
+    "abstract": "Methods from the NCBI Structural Variation Codeathon.",
+    "links": {
+      "paper": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8479851/"
+    },
+    "featured": false
+  },
+  {
+    "id": "cyrano-rna-2020",
+    "title": "An evolutionarily conserved RNA structure in the functional core of the lincRNA Cyrano",
+    "year": 2020,
+    "type": "journal",
+    "venue": "RNA",
+    "authors": ["Alisha N. Jones", "Giuseppina Pisignano", "Thomas Pavelitz", "Jessica White", "Martin Kinisu", "Nicholas Forino", "Dreycey Albin", "Gabriele Varani"],
+    "tags": ["RNA structure", "lincRNA"],
+    "abstract": "Study of conserved RNA structure in lincRNA Cyrano.",
+    "links": {
+      "paper": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7430676/",
+      "code": "https://github.com/Dreycey/cyrano_simulations"
+    },
+    "featured": false
+  },
+  {
+    "id": "c-jun-rna-2020",
+    "title": "Structure of the RNA specialized translation initiation element that recruits eIF3 to the 5'-UTR of c-Jun",
+    "year": 2020,
+    "type": "journal",
+    "venue": "Journal of Molecular Biology",
+    "authors": ["Matthew J. Walker", "Matthew D. Shortridge", "Dreycey D. Albin", "Lauren Y. Cominsky", "Gabriele Varani"],
+    "tags": ["RNA structure", "translation initiation"],
+    "abstract": "Structure of the RNA specialized translation initiation element.",
+    "links": {
+      "paper": "https://pubmed.ncbi.nlm.nih.gov/31953146/"
+    },
+    "featured": false
+  },
+  {
+    "id": "seqscreen-bibm-2019",
+    "title": "SeqScreen: a biocuration platform for robust taxonomic and biological process characterization of nucleic acid sequences of interest",
+    "year": 2019,
+    "type": "conference",
+    "venue": "IEEE BIBM",
+    "authors": ["Dreycey Albin", "Dan Nasko", "R. A. Leo Elworth", "Jacob Lu", "Advait Balaji", "Christian Diaz", "Nidhi Shah", "Jeremy Selengut", "Chris Hulme-Lowe", "Pravin Muthu", "Gene Godbold", "Mikael Lindvall", "Madeline Diep", "Adam Porter", "Mihai Pop", "Krista Ternus", "Todd J. Treangen"],
+    "tags": ["biocuration", "taxonomic characterization"],
+    "abstract": "Conference paper on the SeqScreen platform.",
+    "links": {
+      "paper": "https://doi.org/10.1109/BIBM47256.2019.8982987",
+      "code": "https://gitlab.com/treangenlab/seqscreen"
+    },
+    "featured": false
+  },
+  {
+    "id": "phd-thesis-2023",
+    "title": "The Phage Toolbox: Automating Phage Discovery Using Novel Software, Devices, and High-Throughput Methodology",
+    "year": 2023,
+    "type": "thesis",
+    "venue": "PhD Dissertation",
+    "authors": ["Dreycey Albin"],
+    "tags": ["phage discovery", "automation"],
+    "abstract": "PhD dissertation on automating bacteriophage research.",
+    "links": {},
+    "featured": false
+  },
+  {
+    "id": "ms-thesis-2020",
+    "title": "A Novel Computational Platform for Sensitive, Accurate, and Efficient Screening of Nucleic Acids",
+    "year": 2020,
+    "type": "thesis",
+    "venue": "Master's Thesis",
+    "authors": ["Dreycey Albin"],
+    "tags": ["bioinformatics", "nucleic acid screening"],
+    "abstract": "Master's thesis on computational screening of nucleic acids.",
+    "links": {},
+    "featured": false
+  },
+  {
+    "id": "bs-thesis-2017",
+    "title": "Immunohistochemical Analysis of Co-localization Between the FP Receptor and Endothelial Cells in the Bovine Corpus Luteum",
+    "year": 2017,
+    "type": "thesis",
+    "venue": "Undergraduate Thesis",
+    "authors": ["Dreycey Albin"],
+    "tags": ["immunohistochemistry", "bovine corpus luteum"],
+    "abstract": "Undergraduate thesis on immunohistochemical analysis.",
+    "links": {},
+    "featured": false
+  }
+]

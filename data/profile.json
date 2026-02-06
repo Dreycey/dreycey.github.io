@@ -1,0 +1,34 @@
+{
+  "name": "Dreycey Albin",
+  "role": "ML Software Engineer",
+  "org": "Microsoft Azure",
+  "location": "Redmond, WA",
+  "bio": "ML Engineer and Computer Science PhD focused on production ML systems and evaluation at cloud scale. At Microsoft Azure, I build and ship ML-driven capacity decisioning in the control plane, including distributed inference, offline/online evaluation, telemetry, and guarded rollouts, delivering $100M+/year in CapEx impact. Experienced translating research ideas into reliable, user-facing capabilities across end-to-end data pipelines and Service Fabric microservices.",
+  "links": [
+    {
+      "label": "Email",
+      "href": "mailto:albindreycey@gmail.com",
+      "icon": "bi bi-envelope"
+    },
+    {
+      "label": "GitHub",
+      "href": "https://github.com/Dreycey",
+      "icon": "bi bi-github"
+    },
+    {
+      "label": "Twitter",
+      "href": "https://twitter.com/dreycey",
+      "icon": "bi bi-twitter"
+    },
+    {
+      "label": "LinkedIn",
+      "href": "https://www.linkedin.com/in/dreycey/",
+      "icon": "bi bi-linkedin"
+    },
+    {
+      "label": "Scholar",
+      "href": "https://scholar.google.com/citations?user=JaCaY5AAAAAJ&hl=en",
+      "icon": "bi bi-mortarboard-fill"
+    }
+  ]
+}

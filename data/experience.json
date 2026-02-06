@@ -1,0 +1,43 @@
+[
+  {
+    "company": "Microsoft Azure",
+    "role": "ML Software Engineer",
+    "location": "Redmond, WA",
+    "period": "07/2023 – Present",
+    "details": [
+      "Unlocked $100M+/year in Azure CapEx and earned org-wide recognition by architecting and productizing an ML-driven CPU oversubscription capability.",
+      "Delivered ~$50M+/year in verified CapEx savings by leading technical execution of platform-wide policy changes validated through CapEx reporting.",
+      "Shipped ML inference that drives production control-plane behavior across Service Fabric microservices and legacy C# services.",
+      "Improved next-generation model quality (+6 pp offline accuracy) and production readiness by developing predictive models on large-scale time-series telemetry.",
+      "Delivered an internal RAG chatbot used for onboarding and knowledge discovery by designing the pipeline (LangChain + Semantic Kernel)."
+    ]
+  },
+  {
+    "company": "Medtronic",
+    "role": "ML Software Engineer (Contract)",
+    "location": "Boulder, CO",
+    "period": "09/2021 – 05/2022",
+    "details": [
+      "Led a small team to ship a production software stack for an autonomous catheter robot (Python backend, GUI, real-time motor control/integration).",
+      "Developed an LSTM catheter pose estimator that uses fiber-optic sensor data for real-time inference (sub 20ms/scan)."
+    ]
+  },
+  {
+    "company": "Microsoft Azure",
+    "role": "Data Scientist Intern",
+    "location": "Redmond, WA",
+    "period": "06/2022 – 08/2022",
+    "details": [
+      "Enabled data-driven capacity planning for spot VMs at global fleet scale by building Power BI dashboards and using decision-tree analysis."
+    ]
+  },
+  {
+    "company": "Inscripta",
+    "role": "Computational Biologist Intern",
+    "location": "Boulder, CO",
+    "period": "06/2021 – 08/2021",
+    "details": [
+      "Enabled scalable edit detection on graph-genome data by building a modular Python CLI pipeline and benchmarking alignments."
+    ]
+  }
+]
