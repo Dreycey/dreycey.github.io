@@ -70,7 +70,7 @@ function renderAbout(profile, education, interests) {
                  </div>
             </div>
             <div class="about-details">
-                <h2 style="border-bottom: none; margin-bottom: 1rem;">About Me</h2>
+                <h2 style="border-bottom: none; margin-bottom: 1rem; margin-top: 0; display: block; line-height: 1;">About Me</h2>
                 <p class="lead">${profile.bio}</p>
                 <p><i class="bi bi-geo-alt"></i> ${profile.location}</p>
                 
