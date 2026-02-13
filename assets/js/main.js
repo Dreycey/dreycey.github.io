@@ -65,6 +65,9 @@ function renderAbout(profile, education, interests) {
                  <div class="about-links">
                     ${linksHtml}
                  </div>
+                 <div style="margin-top: 1.5rem;">
+                    <a href="assets/pdf/Dreycey_Albin_Resume.pdf" target="_blank" class="btn btn-outline">Download Resume</a>
+                 </div>
             </div>
             <div class="about-details">
                 <h2 style="border-bottom: none; margin-bottom: 1rem;">About Me</h2>
