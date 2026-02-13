@@ -21,6 +21,16 @@ async function fetchData() {
         renderFeaturedPubs(pubs);
         renderProjects(projects);
         renderContact(profile);
+        
+        // Scroll to hash if present (e.g., #contact)
+        if (window.location.hash) {
+            setTimeout(() => {
+                const element = document.querySelector(window.location.hash);
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                }
+            }, 100);
+        }
     } catch (e) {
         console.error('Error loading data:', e);
     }
@@ -151,6 +161,7 @@ function renderExperience(experience) {
                 <ul class="experience-details">
                     ${exp.details.map(d => `<li>${d}</li>`).join('')}
                 </ul>
+                <button class="experience-toggle" onclick="toggleExperience(this)">Show Details</button>
             </div>
         </div>
     `}).join('');
@@ -161,6 +172,22 @@ function renderExperience(experience) {
             ${html}
         </div>
     `;
+}
+
+window.toggleExperience = function(btn) {
+    const card = btn.closest('.experience-card');
+    const list = card.querySelector('.experience-details');
+    
+    // Force toggle the class
+    if (list.style.display === 'block') {
+        list.style.display = '';
+        list.classList.remove('expanded');
+        btn.textContent = 'Show Details';
+    } else {
+        list.style.display = 'block';
+        list.classList.add('expanded');
+        btn.textContent = 'Show Less';
+    }
 }
 
 function renderFeaturedPubs(pubs) {

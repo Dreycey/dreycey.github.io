@@ -3,7 +3,7 @@
   "role": "ML Software Engineer",
   "org": "Microsoft Azure",
   "location": "Redmond, WA",
-  "bio": "ML Engineer and Computer Science PhD focused on production ML systems and evaluation at cloud scale. At Microsoft Azure, I build and ship ML-driven capacity decisioning in the control plane, including distributed inference, offline/online evaluation, telemetry, and guarded rollouts, delivering $100M+/year in CapEx impact. Experienced translating research ideas into reliable, user-facing capabilities across end-to-end data pipelines and Service Fabric microservices.",
+  "bio": "ML Engineer and Computer Science PhD building distributed ML systems at cloud scale. At Microsoft Azure, I design and ship ML models for capacity planning and resource allocation with large-scale data pipelines and rigorous offline and online evaluation, delivering $100M+/year in measurable CapEx savings. I work hypothesis-first, validate with experiments, and turn new modeling ideas into reliable production systems.",
   "links": [
     {
       "label": "Email",

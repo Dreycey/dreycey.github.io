@@ -96,7 +96,7 @@ function renderFooter() {
     const year = new Date().getFullYear();
     footer.innerHTML = `
     <div class="container">
-        <p>&copy; ${year} Dreycey Albin. Built with vanilla JS.</p>
+        <p>&copy; ${year} Dreycey Albin.</p>
     </div>
     `;
 }
