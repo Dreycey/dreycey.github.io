@@ -58,6 +58,26 @@ a:hover {
   }
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  margin-top: 1rem;
+  margin-bottom: 0.75rem;
+  color: #345676;
+  line-height: 1.2;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; border-bottom: 2px solid var(--accent-color); padding-bottom: 0.5rem; display: inline-block; }
+h3 { font-size: 1.5rem; margin-top: 0; }
+
+p {
+  margin-bottom: 1rem;
+}
+
+section {
+  padding: 2rem 0;
+}
+
 @media (max-width: 768px) {
   .container {
     padding: 0 1rem;
@@ -68,27 +88,23 @@ a:hover {
   }
   
   h1 { font-size: 2rem; }
-  h2 { font-size: 1.75rem; }
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-heading);
-  margin-top: 2rem;
-  margin-bottom: 1.5rem;
-  color: #345676;
-  line-height: 1.2;
-}
-
-h1 { font-size: 2.5rem; }
-h2 { font-size: 2rem; border-bottom: 2px solid var(--accent-color); padding-bottom: 0.5rem; display: inline-block; }
-h3 { font-size: 1.5rem; margin-top: 0; }
-
-p {
-  margin-bottom: 1.5rem;
-}
-
-section {
-  padding: 5rem 0;
+  h2 { 
+    font-size: 1.75rem; 
+    display: block;
+    text-align: center;
+    border-bottom: none;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  h2::after {
+     content: "";
+     display: block;
+     width: 60px;
+     height: 3px;
+     background: var(--accent-color);
+     margin: 0.5rem auto 0;
+  }
 }
 
 #site-header {
@@ -104,7 +120,7 @@ section {
 
 #site-footer {
   background: #fff;
-  padding: 3rem 0;
+  padding: 1rem 0;
   border-top: 1px solid #eaeaea;
   text-align: center;
   color: var(--text-muted);

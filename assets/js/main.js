@@ -50,7 +50,7 @@ function renderAbout(profile, education, interests) {
     const interestsHtml = interests.map(cat => `
         <div style="margin-bottom: 1.5rem;">
             <h4 style="margin: 0 0 0.5rem 0; font-size: 1.1rem;">${cat.category}</h4>
-            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+            <div class="interests-container">
                 ${cat.items.map(item => `<span class="badge">${item}</span>`).join('')}
             </div>
         </div>
@@ -118,7 +118,7 @@ function renderInterests(interests) {
     const html = interests.map(cat => `
         <div style="margin-bottom: 1.5rem;">
             <h4 style="margin: 0 0 0.5rem 0; font-size: 1.1rem;">${cat.category}</h4>
-            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+            <div class="interests-container">
                 ${cat.items.map(item => `<span class="badge">${item}</span>`).join('')}
             </div>
         </div>
@@ -184,7 +184,7 @@ function renderFeaturedPubs(pubs) {
     `).join('');
 
     container.innerHTML = `
-        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2rem;">
+        <div class="section-header">
             <h2>Featured Publications</h2>
             <a href="publications/index.html" class="btn btn-sm btn-outline">View All</a>
         </div>

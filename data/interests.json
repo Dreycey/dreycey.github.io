@@ -1,7 +1,7 @@
 [
   {
     "category": "ML & Research",
-    "items": ["PyTorch", "TensorFlow", "Scikit-Learn", "CUDA", "Distributed Training (DeepSpeed)", "RAG", "AutoML", "Computer Vision", "NLP"]
+    "items": ["PyTorch", "TensorFlow", "Scikit-Learn", "CUDA", "Distributed Training", "RAG", "Computer Vision", "NLP"]
   },
   {
     "category": "Systems & Infrastructure",
