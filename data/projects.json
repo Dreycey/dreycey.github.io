@@ -22,7 +22,7 @@
   },
   {
     "name": "Smell-ML",
-    "desc": "Machine learning project involving olfactory data.",
+    "desc": "A combination of code smelling tools for ML projects.",
     "href": "https://github.com/Dreycey/SmellML",
     "stack": "Python",
     "image": "assets/img/portfolio/smellml.png"
