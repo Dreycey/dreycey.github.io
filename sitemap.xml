@@ -2,13 +2,92 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
    <url>
       <loc>https://dreycey.github.io/</loc>
-      <lastmod>2026-02-13</lastmod>
+      <lastmod>2026-02-26</lastmod>
       <changefreq>monthly</changefreq>
       <priority>1.0</priority>
    </url>
    <url>
-      <loc>https://dreycey.github.io/publications/index.html</loc>
+      <loc>https://dreycey.github.io/publications/</loc>
+      <lastmod>2026-02-26</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
+   </url>
+   <url>
+      <loc>https://dreycey.github.io/publications/phagescanner-2024/</loc>
+      <lastmod>2026-02-26</lastmod>
+      <changefreq>yearly</changefreq>
+      <priority>0.6</priority>
+   </url>
+   <url>
+      <loc>https://dreycey.github.io/publications/phagebox-2023/</loc>
+      <lastmod>2026-02-26</lastmod>
+      <changefreq>yearly</changefreq>
+      <priority>0.6</priority>
+   </url>
+   <url>
+      <loc>https://dreycey.github.io/publications/seqscreen-2022/</loc>
+      <lastmod>2026-02-26</lastmod>
+      <changefreq>yearly</changefreq>
+      <priority>0.6</priority>
+   </url>
+   <url>
+      <loc>https://dreycey.github.io/publications/phagescanner-preprint-2023/</loc>
+      <lastmod>2026-02-26</lastmod>
+      <changefreq>yearly</changefreq>
+      <priority>0.6</priority>
+   </url>
+   <url>
+      <loc>https://dreycey.github.io/publications/tcdd-2022/</loc>
+      <lastmod>2026-02-26</lastmod>
+      <changefreq>yearly</changefreq>
+      <priority>0.6</priority>
+   </url>
+   <url>
+      <loc>https://dreycey.github.io/publications/sars-cov-2-diversity-2021/</loc>
+      <lastmod>2026-02-26</lastmod>
+      <changefreq>yearly</changefreq>
+      <priority>0.6</priority>
+   </url>
+   <url>
+      <loc>https://dreycey.github.io/publications/hackathon-2021/</loc>
+      <lastmod>2026-02-26</lastmod>
+      <changefreq>yearly</changefreq>
+      <priority>0.6</priority>
+   </url>
+   <url>
+      <loc>https://dreycey.github.io/publications/cyrano-rna-2020/</loc>
+      <lastmod>2026-02-26</lastmod>
+      <changefreq>yearly</changefreq>
+      <priority>0.6</priority>
+   </url>
+   <url>
+      <loc>https://dreycey.github.io/publications/c-jun-rna-2020/</loc>
+      <lastmod>2026-02-26</lastmod>
+      <changefreq>yearly</changefreq>
+      <priority>0.6</priority>
+   </url>
+   <url>
+      <loc>https://dreycey.github.io/publications/seqscreen-bibm-2019/</loc>
+      <lastmod>2026-02-26</lastmod>
+      <changefreq>yearly</changefreq>
+      <priority>0.6</priority>
+   </url>
+   <url>
+      <loc>https://dreycey.github.io/publications/phd-thesis-2023/</loc>
+      <lastmod>2026-02-26</lastmod>
+      <changefreq>yearly</changefreq>
+      <priority>0.6</priority>
+   </url>
+   <url>
+      <loc>https://dreycey.github.io/publications/ms-thesis-2020/</loc>
+      <lastmod>2026-02-26</lastmod>
+      <changefreq>yearly</changefreq>
+      <priority>0.6</priority>
+   </url>
+   <url>
+      <loc>https://dreycey.github.io/publications/bs-thesis-2017/</loc>
+      <lastmod>2026-02-26</lastmod>
+      <changefreq>yearly</changefreq>
+      <priority>0.6</priority>
    </url>
 </urlset>

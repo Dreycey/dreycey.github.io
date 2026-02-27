@@ -88,7 +88,7 @@ function renderPubs() {
     
     container.innerHTML = filtered.map(p => `
         <div class="pub-item">
-            <a href="publication.html?id=${p.id}" class="pub-title">${p.title}</a>
+            <a href="${p.id}/" class="pub-title">${p.title}</a>
             <div class="pub-authors">${p.authors.join(', ')}</div>
             <div class="pub-meta">
                 ${p.venue} ${p.year}

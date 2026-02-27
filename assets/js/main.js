@@ -198,7 +198,7 @@ function renderFeaturedPubs(pubs) {
     
     const html = featured.map(p => `
         <div class="pub-item">
-            <a href="publications/publication.html?id=${p.id}" class="pub-title">${p.title}</a>
+            <a href="publications/${p.id}/" class="pub-title">${p.title}</a>
             <div class="pub-authors">${p.authors.join(', ')}</div>
             <div class="pub-meta">
                 ${p.venue} ${p.year}

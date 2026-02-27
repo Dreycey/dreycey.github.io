@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     const params = new URLSearchParams(window.location.search);
-    const id = params.get('id');
+    const id = params.get('id') ||
+               document.getElementById('pub-detail')?.dataset.pubId ||
+               null;
     
     if (!id) {
         document.getElementById('pub-detail').innerHTML = '<p>Publication ID not specified.</p>';
@@ -12,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 async function loadPublication(id) {
     try {
-        const res = await fetch('../data/publications.json');
+        const res = await fetch('/data/publications.json');
         const pubs = await res.json();
         const pub = pubs.find(p => p.id === id);
         
