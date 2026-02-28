@@ -84,7 +84,7 @@ def render_about_section(profile, education, interests, publish_resume=False):
         )
     interests_html = '\n'.join(interests_parts)
 
-    return f'''<section id="about">
+    return f'''<section id="about" data-publish-resume="{'true' if publish_resume else 'false'}">
         <div class="about-content">
             <div class="about-photo">
                  <img src="assets/img/me.jpg" alt="{profile['name']}">

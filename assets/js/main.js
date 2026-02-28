@@ -75,9 +75,7 @@ function renderAbout(profile, education, interests) {
                  <div class="about-links">
                     ${linksHtml}
                  </div>
-                 <div>
-                    <a href="assets/pdf/Dreycey_Albin_Resume.pdf" target="_blank" class="resume-link"><i class="bi bi-file-earmark-text"></i> resume.pdf</a>
-                 </div>
+                 ${container.dataset.publishResume === 'true' ? '<div><a href="assets/pdf/Dreycey_Albin_Resume.pdf" target="_blank" class="resume-link"><i class="bi bi-file-earmark-text"></i> resume.pdf</a><span style="color: var(--border-color); margin: 0 0.35rem;">/</span><a href="assets/pdf/Dreycey_Albin_CV.pdf" target="_blank" class="resume-link">cv.pdf</a></div>' : ''}
             </div>
             <div class="about-details">
                 <h2 style="border-bottom: none; margin-bottom: 1rem; margin-top: 0; display: block; line-height: 1;">About Me</h2>
@@ -90,7 +88,7 @@ function renderAbout(profile, education, interests) {
                         ${eduHtml}
                     </div>
                     <div>
-                        <div style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-muted); letter-spacing: 0.06em; margin-bottom: 1rem;">stack</div>
+                        <div style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-muted); letter-spacing: 0.06em; margin-bottom: 1rem;">interests</div>
                         ${interestsHtml}
                     </div>
                 </div>
