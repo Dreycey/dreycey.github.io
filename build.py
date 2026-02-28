@@ -535,9 +535,15 @@ def generate_sitemap(pubs, blog_posts=None):
 # ── Main ──────────────────────────────────────────────────────────────────────
 
 def main():
+    config = load_json("data/config.json")
+
     parser = argparse.ArgumentParser(description="Build dreycey.github.io static site.")
-    parser.add_argument("--publish-blog", action="store_true", help="Include the blog section in the build.")
-    parser.add_argument("--publish-resume", action="store_true", help="Include resume/cv links in the build.")
+    parser.add_argument("--publish-blog", action=argparse.BooleanOptionalAction,
+                        default=config.get("publish_blog", False),
+                        help="Include the blog section in the build.")
+    parser.add_argument("--publish-resume", action=argparse.BooleanOptionalAction,
+                        default=config.get("publish_resume", False),
+                        help="Include resume/cv links in the build.")
     args = parser.parse_args()
 
     print("Loading data...")
@@ -549,14 +555,8 @@ def main():
     interests = load_json("data/interests.json")
     blog_posts = load_json("data/blog.json")
 
-    if args.publish_blog:
-        print("Blog publishing: ON")
-    else:
-        print("Blog publishing: OFF  (pass --publish-blog to include)")
-    if args.publish_resume:
-        print("Resume publishing: ON")
-    else:
-        print("Resume publishing: OFF (pass --publish-resume to include)")
+    print(f"Blog publishing:   {'ON' if args.publish_blog else 'OFF'}")
+    print(f"Resume publishing: {'ON' if args.publish_resume else 'OFF'}")
 
     # 1. Generate individual publication pages
     print(f"Generating {len(pubs)} publication pages...")
