@@ -1,14 +1,6 @@
 [
   {
-    "category": "ML & Research",
-    "items": ["PyTorch", "TensorFlow", "Scikit-Learn", "CUDA", "Distributed Training", "RAG", "Computer Vision", "NLP"]
-  },
-  {
-    "category": "Systems & Infrastructure",
-    "items": ["Service Fabric", "Kubernetes", "Docker", "Azure/AWS", "Linux/Git"]
-  },
-  {
-    "category": "Languages & Data",
-    "items": ["Python", "C++", "C#", "Rust", "SQL (Postgres)", "NoSQL (Kusto/MongoDB)"]
+    "category": "Research Interests",
+    "items": ["Computational Biology", "Generative AI", "ML Systems", "Distributed Systems"]
   }
 ]

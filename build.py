@@ -7,6 +7,7 @@ index.html and publications/index.html, and regenerates sitemap.xml.
 No external dependencies — pure Python stdlib.
 """
 
+import argparse
 import json
 import os
 import re
@@ -48,7 +49,7 @@ def inject_build_block(html, name, replacement):
 
 # ── Home page section renderers ───────────────────────────────────────────────
 
-def render_about_section(profile, education, interests):
+def render_about_section(profile, education, interests, publish_resume=False):
     links_html = '\n'.join(
         f'                <a href="{l["href"]}" target="_blank" title="{l["label"]}"'
         f' style="color: var(--accent-color); font-size: 1.5rem; text-decoration: none;'
@@ -92,9 +93,7 @@ def render_about_section(profile, education, interests):
                  <div class="about-links">
 {links_html}
                  </div>
-                 <div>
-                    <a href="assets/pdf/Dreycey_Albin_Resume.pdf" target="_blank" class="resume-link"><i class="bi bi-file-earmark-text"></i> resume.pdf</a>
-                 </div>
+                 {'<div><a href="assets/pdf/Dreycey_Albin_Resume.pdf" target="_blank" class="resume-link"><i class="bi bi-file-earmark-text"></i> resume.pdf</a><span style="color: var(--border-color); margin: 0 0.35rem;">/</span><a href="assets/pdf/Dreycey_Albin_CV.pdf" target="_blank" class="resume-link">cv.pdf</a></div>' if publish_resume else ''}
             </div>
             <div class="about-details">
                 <h2 style="border-bottom: none; margin-bottom: 1rem; margin-top: 0; display: block; line-height: 1;">About Me</h2>
@@ -106,7 +105,7 @@ def render_about_section(profile, education, interests):
 {edu_html}
                     </div>
                     <div>
-                        <div style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-muted); letter-spacing: 0.06em; margin-bottom: 1rem;">stack</div>
+                        <div style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-muted); letter-spacing: 0.06em; margin-bottom: 1rem;">interests</div>
 {interests_html}
                     </div>
                 </div>
@@ -224,6 +223,30 @@ def render_contact_section(profile):
         f'                {links_html}\n'
         '            </div>\n'
         '        </div>\n'
+        '    </section>'
+    )
+
+
+# ── Blog section renderer ─────────────────────────────────────────────────────
+
+def render_blog_section(posts):
+    items = []
+    for post in posts:
+        tags_html = ''.join(f'<span class="badge">{t}</span>' for t in post.get('tags', []))
+        items.append(
+            f'        <div class="pub-item">\n'
+            f'            <a href="blog/{post["id"]}/" class="pub-title">{post["title"]}</a>\n'
+            f'            <div class="pub-meta">{post["date"]}</div>\n'
+            f'            <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0.5rem 0;">{post["summary"]}</p>\n'
+            f'            <div style="margin-top: 0.5rem;">{tags_html}</div>\n'
+            f'        </div>'
+        )
+    return (
+        '<section id="blog">\n'
+        '        <div class="section-header">\n'
+        '            <h2>Blog</h2>\n'
+        '        </div>\n'
+        + '\n'.join(items) + '\n'
         '    </section>'
     )
 
@@ -386,9 +409,89 @@ def render_pub_list(pubs):
     )
 
 
+# ── Blog page generators ──────────────────────────────────────────────────────
+
+def generate_blog_index_page(blog):
+    name = blog.get('name', 'Blog')
+    tagline = blog.get('tagline', '')
+    platforms = blog.get('platforms', [])
+    posts = sorted(blog.get('posts', []), key=lambda p: p['date'], reverse=True)
+
+    # Compact platform links
+    platform_links = ''
+    featured_embed = ''
+    for p in platforms:
+        platform_links += (
+            f'<a href="{p["url"]}" target="_blank" style="display: inline-flex; align-items: center; gap: 0.4rem;'
+            f' color: var(--text-muted); font-size: 0.875rem; font-family: var(--font-mono);">'
+            f'<i class="{p["icon"]}"></i> {p["name"]} &nearr;</a>\n            '
+        )
+        if p.get('featured_video_id'):
+            featured_embed = (
+                f'        <div style="margin-top: 2.5rem;">\n'
+                f'            <div style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-muted); letter-spacing: 0.06em; margin-bottom: 0.75rem;">featured</div>\n'
+                f'            <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: var(--border-radius); border: 1px solid var(--border-color);">\n'
+                f'                <iframe src="https://www.youtube.com/embed/{p["featured_video_id"]}" title="Featured video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>\n'
+                f'            </div>\n'
+                f'        </div>\n'
+            )
+
+    # Chronological post list
+    post_rows = ''
+    for post in posts:
+        post_rows += (
+            f'        <div style="display: flex; align-items: baseline; gap: 1.5rem; padding: 0.6rem 0; border-bottom: 1px solid var(--border-color);">\n'
+            f'            <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); white-space: nowrap;">{post["date"]}</span>\n'
+            f'            <a href="{post["url"]}" target="_blank" style="color: var(--text-color); font-size: 0.95rem;">{post["title"]} &nearr;</a>\n'
+            f'        </div>\n'
+        )
+
+    posts_section = ''
+    if post_rows:
+        posts_section = (
+            f'        <div style="margin-top: 2.5rem;">\n'
+            f'            <div style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-muted); letter-spacing: 0.06em; margin-bottom: 0.75rem;">posts</div>\n'
+            f'{post_rows}'
+            f'        </div>\n'
+        )
+
+    return f'''<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{name} - Dreycey Albin</title>
+    <meta name="description" content="{tagline}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{BASE_URL}/blog/">
+    <meta property="og:title" content="{name} - Dreycey Albin">
+    <meta property="og:description" content="{tagline}">
+    <link rel="stylesheet" href="../assets/css/base.css">
+    <link rel="stylesheet" href="../assets/css/components.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+</head>
+<body>
+    <div id="site-header"></div>
+
+    <main class="container">
+        <div style="padding-top: 2rem; max-width: 700px;">
+            <h1>{name}</h1>
+            <p style="color: var(--text-muted); margin-bottom: 1.5rem;">{tagline}</p>
+            <div style="display: flex; gap: 1.5rem; flex-wrap: wrap;">
+            {platform_links}</div>
+{featured_embed}{posts_section}        </div>
+    </main>
+
+    <div id="site-footer"></div>
+
+    <script src="../assets/js/render.js"></script>
+</body>
+</html>'''
+
+
 # ── Sitemap ───────────────────────────────────────────────────────────────────
 
-def generate_sitemap(pubs):
+def generate_sitemap(pubs, blog_posts=None):
     today = date.today().isoformat()
     pub_urls = '\n'.join(
         f'   <url>\n'
@@ -399,6 +502,16 @@ def generate_sitemap(pubs):
         f'   </url>'
         for pub in pubs
     )
+    blog_urls = ''
+    if blog_posts:
+        blog_urls = (
+            '\n   <url>\n'
+            f'      <loc>{BASE_URL}/blog/</loc>\n'
+            f'      <lastmod>{today}</lastmod>\n'
+            '      <changefreq>monthly</changefreq>\n'
+            '      <priority>0.7</priority>\n'
+            '   </url>'
+        )
     return (
         '<?xml version="1.0" encoding="UTF-8"?>\n'
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
@@ -414,7 +527,7 @@ def generate_sitemap(pubs):
         '      <changefreq>monthly</changefreq>\n'
         '      <priority>0.8</priority>\n'
         '   </url>\n'
-        f'{pub_urls}\n'
+        f'{pub_urls}{blog_urls}\n'
         '</urlset>\n'
     )
 
@@ -422,6 +535,11 @@ def generate_sitemap(pubs):
 # ── Main ──────────────────────────────────────────────────────────────────────
 
 def main():
+    parser = argparse.ArgumentParser(description="Build dreycey.github.io static site.")
+    parser.add_argument("--publish-blog", action="store_true", help="Include the blog section in the build.")
+    parser.add_argument("--publish-resume", action="store_true", help="Include resume/cv links in the build.")
+    args = parser.parse_args()
+
     print("Loading data...")
     profile = load_json("data/profile.json")
     pubs = load_json("data/publications.json")
@@ -429,6 +547,16 @@ def main():
     experience = load_json("data/experience.json")
     education = load_json("data/education.json")
     interests = load_json("data/interests.json")
+    blog_posts = load_json("data/blog.json")
+
+    if args.publish_blog:
+        print("Blog publishing: ON")
+    else:
+        print("Blog publishing: OFF  (pass --publish-blog to include)")
+    if args.publish_resume:
+        print("Resume publishing: ON")
+    else:
+        print("Resume publishing: OFF (pass --publish-resume to include)")
 
     # 1. Generate individual publication pages
     print(f"Generating {len(pubs)} publication pages...")
@@ -441,24 +569,36 @@ def main():
     print("Updating index.html...")
     index_html = read_file("index.html")
     index_html = inject_build_block(index_html, "jsonld", person_jsonld(profile, education))
-    index_html = inject_build_block(index_html, "about", render_about_section(profile, education, interests))
+    index_html = inject_build_block(index_html, "about", render_about_section(profile, education, interests, args.publish_resume))
     index_html = inject_build_block(index_html, "experience", render_experience_section(experience))
     index_html = inject_build_block(index_html, "featured-pubs", render_featured_pubs_section(pubs))
     index_html = inject_build_block(index_html, "software", render_software_section(projects))
+    if args.publish_blog:
+        write_file("blog/index.html", generate_blog_index_page(blog_posts))
+        print("  -> blog/index.html")
+    index_html = inject_build_block(index_html, "blog", '')
     index_html = inject_build_block(index_html, "contact", render_contact_section(profile))
     write_file("index.html", index_html)
     print("  -> index.html")
 
-    # 3. Update publications/index.html with pre-rendered pub list
+    # 3. Update render.js nav to include/exclude blog link
+    print("Updating assets/js/render.js...")
+    render_js = read_file("assets/js/render.js")
+    blog_nav_html = '<li><a href="${basePath}blog/index.html">Blog</a></li>' if args.publish_blog else ''
+    render_js = inject_build_block(render_js, "blog-nav", blog_nav_html)
+    write_file("assets/js/render.js", render_js)
+    print("  -> assets/js/render.js")
+
+    # 4. Update publications/index.html with pre-rendered pub list
     print("Updating publications/index.html...")
     pubs_html = read_file("publications/index.html")
     pubs_html = inject_build_block(pubs_html, "publist", render_pub_list(pubs))
     write_file("publications/index.html", pubs_html)
     print("  -> publications/index.html")
 
-    # 4. Regenerate sitemap.xml
+    # 5. Regenerate sitemap.xml
     print("Regenerating sitemap.xml...")
-    write_file("sitemap.xml", generate_sitemap(pubs))
+    write_file("sitemap.xml", generate_sitemap(pubs, blog_posts.get('platforms') if args.publish_blog else None))
     print("  -> sitemap.xml")
 
     print("Done!")

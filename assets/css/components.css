@@ -336,7 +336,7 @@
   object-fit: cover;
   border-radius: calc(var(--border-radius) - 4px);
   margin-bottom: 1.5rem;
-  background-color: #1e293b;
+  background-color: var(--card-bg);
 }
 
 /* Mobile adjustments for cards */

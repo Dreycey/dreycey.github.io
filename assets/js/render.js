@@ -33,6 +33,9 @@ function renderHeader() {
             <ul>
                 <li><a href="${basePath}index.html">Home</a></li>
                 <li><a href="${basePath}publications/index.html">Publications</a></li>
+                <!-- BUILD:blog-nav -->
+
+<!-- /BUILD:blog-nav -->
                 <li><a href="${basePath}index.html#contact">Contact</a></li>
             </ul>
             <button id="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme" title="Toggle light/dark mode">

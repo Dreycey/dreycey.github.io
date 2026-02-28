@@ -1,0 +1,25 @@
+{
+  "name": "Compiled Curiosity",
+  "tagline": "Blog posts spanning ML Systems, Research, and Other Curiosities",
+  "platforms": [
+    {
+      "name": "Substack",
+      "icon": "bi bi-envelope-paper-fill",
+      "url": "https://substack.com/@dreycey"
+    },
+    {
+      "name": "YouTube",
+      "icon": "bi bi-youtube",
+      "url": "https://www.youtube.com/@dreyceyalbin5933/videos",
+      "featured_video_id": ""
+    }
+  ],
+  "posts": [
+    {
+      "title": "Petal to the Metal",
+      "date": "2026-02-28",
+      "url": "https://dreycey.substack.com/p/petal-to-the-metal",
+      "platform": "substack"
+    }
+  ]
+}
