@@ -50,16 +50,16 @@ function renderAbout(profile, education, interests) {
 
     // Generate Education HTML
     const eduHtml = education.map(edu => `
-        <div style="margin-bottom: 1.5rem;">
-            <h4 style="margin: 0; font-size: 1.1rem;">${edu.degree}, ${edu.year} </h4>
-            <div style="color: var(--accent-color); font-weight: 500; font-size: 0.95rem;">${edu.school} ${edu.details ? `&middot; ${edu.details}` : ''} </div>
+        <div style="margin-bottom: 0.875rem; border-left: 1px solid var(--border-color); padding-left: 0.75rem;">
+            <div style="font-size: 0.875rem; font-weight: 500; color: var(--text-color); line-height: 1.35;">${edu.degree}</div>
+            <div style="font-size: 0.8rem; color: var(--text-muted);">${edu.school}${edu.details ? ` &middot; <span style="font-family: var(--font-mono); color: var(--code-accent); font-size: 0.7rem;">${edu.details}</span>` : ''}</div>
+            <div style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-muted); margin-top: 0.1rem;">${edu.year}</div>
         </div>
     `).join('');
 
     // Generate Interests HTML
     const interestsHtml = interests.map(cat => `
-        <div style="margin-bottom: 1.5rem;">
-            <h4 style="margin: 0 0 0.5rem 0; font-size: 1.1rem;">${cat.category}</h4>
+        <div style="margin-bottom: 0.875rem;">
             <div class="interests-container">
                 ${cat.items.map(item => `<span class="badge">${item}</span>`).join('')}
             </div>
@@ -75,8 +75,8 @@ function renderAbout(profile, education, interests) {
                  <div class="about-links">
                     ${linksHtml}
                  </div>
-                 <div style="margin-top: 1.5rem;">
-                    <a href="assets/pdf/Dreycey_Albin_Resume.pdf" target="_blank" class="btn btn-outline">Download Resume</a>
+                 <div>
+                    <a href="assets/pdf/Dreycey_Albin_Resume.pdf" target="_blank" class="resume-link"><i class="bi bi-file-earmark-text"></i> resume.pdf</a>
                  </div>
             </div>
             <div class="about-details">
@@ -86,11 +86,11 @@ function renderAbout(profile, education, interests) {
                 
                 <div class="info-grid" style="margin-top: 3rem; margin-bottom: 0; padding-top: 0;">
                     <div>
-                        <h3 style="margin-top: 0;">Education</h3>
+                        <div style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-muted); letter-spacing: 0.06em; margin-bottom: 1rem;">education</div>
                         ${eduHtml}
                     </div>
                     <div>
-                        <h3 style="margin-top: 0;">Interests & Skills</h3>
+                        <div style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-muted); letter-spacing: 0.06em; margin-bottom: 1rem;">stack</div>
                         ${interestsHtml}
                     </div>
                 </div>
@@ -247,16 +247,16 @@ function renderContact(profile) {
     if (!container) return;
 
     const html = profile.links.map(l => `
-        <a href="${l.href}" class="btn btn-outline" target="_blank" style="margin-bottom: 1rem;">
+        <a href="${l.href}" class="btn btn-outline" target="_blank">
             ${l.icon ? `<i class="${l.icon}"></i>` : ''} ${l.label}
         </a>
     `).join(' ');
 
     container.innerHTML = `
-        <div style="text-align: center; max-width: 600px; margin: 0 auto;">
+        <div style="text-align: center; max-width: 800px; margin: 0 auto;">
             <h2>Contact</h2>
             <p style="margin-bottom: 2rem;">Feel free to reach out for collaborations or questions.</p>
-            <div class="filters" style="justify-content: center;">
+            <div class="filters" style="justify-content: center; gap: 0.75rem;">
                 ${html}
             </div>
         </div>

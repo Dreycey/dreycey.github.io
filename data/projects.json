@@ -14,25 +14,11 @@
     "image": "assets/img/portfolio/phagebox.png"
   },
   {
-    "name": "Touching LEDs",
-    "desc": "Embedded C project.",
-    "href": "https://github.com/Dreycey/embedded_tochingLEDs",
-    "stack": "C",
-    "image": "assets/img/portfolio/touching_leds.png"
-  },
-  {
-    "name": "Smell-ML",
-    "desc": "A combination of code smelling tools for ML projects.",
-    "href": "https://github.com/Dreycey/SmellML",
-    "stack": "Python",
-    "image": "assets/img/portfolio/smellml.png"
-  },
-  {
-    "name": "DIPPS",
-    "desc": "Database project for protein structures.",
-    "href": "https://github.com/Dreycey/DIPSS",
-    "stack": "SQL / Postgres / Python",
-    "image": "assets/img/portfolio/dipps_protein.png"
+    "name": "PhageFilter",
+    "desc": "PhageFilter uses a Sequence Bloom Tree (SBT) to filter bacteriophage reads from metagenomic files.",
+    "href": "https://github.com/Dreycey/PhageBox",
+    "stack": "Rust",
+    "image": "assets/img/portfolio/phagefilter.png"
   },
   {
     "name": "kmerCatcher",

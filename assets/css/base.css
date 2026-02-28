@@ -1,17 +1,24 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i|Playfair+Display:400,400i,500,500i,600,600i,700,700i&subset=cyrillic');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 
 :root {
-  --bg-color: #f8f9fa;
-  --text-color: #4a4a4a;
-  --text-muted: #6c757d;
-  --card-bg: #ffffff;
-  --accent-color: #2c4964;
-  --max-width: 1400px; /* Increased for large screens */
+  --bg-color: #0f172a;
+  --text-color: #e2e8f0;
+  --text-muted: #94a3b8;
+  --card-bg: #1e293b;
+  --accent-color: #38bdf8;
+  --accent-hover: #0ea5e9;
+  --border-color: #334155;
+  --code-accent: #4ade80;
+  --heading-color: #f1f5f9;
+  --max-width: 1400px;
   --header-height: 70px;
-  --border-radius: 12px;
-  --font-main: "Open Sans", sans-serif;
-  --font-heading: "Playfair Display", serif;
-  --font-sub: "Poppins", sans-serif;
+  --border-radius: 4px;
+  --font-main: "Inter", "Open Sans", sans-serif;
+  --font-heading: "Inter", "Open Sans", sans-serif;
+  --font-sub: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", "Courier New", monospace;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.3);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.4);
 }
 
 * {
@@ -24,7 +31,7 @@ body {
   font-family: var(--font-main);
   background-color: var(--bg-color);
   color: var(--text-color);
-  line-height: 1.7;
+  line-height: 1.65;
   font-size: 16px;
 }
 
@@ -35,7 +42,7 @@ a {
 }
 
 a:hover {
-  color: #7c787a;
+  color: var(--accent-hover);
 }
 
 .container {
@@ -62,54 +69,54 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
   margin-top: 1rem;
   margin-bottom: 0.75rem;
-  color: #345676;
+  color: var(--heading-color);
   line-height: 1.2;
 }
 
-h1 { font-size: 2.5rem; }
-h2 { font-size: 2rem; border-bottom: 2px solid var(--accent-color); padding-bottom: 0.5rem; display: inline-block; }
-h3 { font-size: 1.5rem; margin-top: 0; }
+h1 { font-size: 2.25rem; }
+h2 { font-size: 1.6rem; font-weight: 600; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; display: inline-block; }
+h3 { font-size: 1.15rem; font-weight: 600; margin-top: 0; }
 
 p {
   margin-bottom: 1rem;
 }
 
 section {
-  padding: 2rem 0;
+  padding: 4rem 0;
 }
 
 @media (max-width: 768px) {
   .container {
     padding: 0 1rem;
   }
-  
+
   section {
     padding: 3rem 0;
   }
-  
+
   h1 { font-size: 2rem; }
-  h2 { 
-    font-size: 1.75rem; 
+  h2 {
+    font-size: 1.75rem;
     display: block;
     text-align: center;
     border-bottom: none;
     margin-left: auto;
     margin-right: auto;
   }
-  
+
   h2::after {
      content: "";
      display: block;
      width: 60px;
-     height: 3px;
-     background: var(--accent-color);
+     height: 2px;
+     background: var(--border-color);
      margin: 0.5rem auto 0;
   }
 }
 
 #site-header {
-  background: #fff;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
+  background: var(--bg-color);
+  border-bottom: 1px solid var(--border-color);
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -119,11 +126,41 @@ section {
 }
 
 #site-footer {
-  background: #fff;
+  background: var(--bg-color);
   padding: 1rem 0;
-  border-top: 1px solid #eaeaea;
+  border-top: 1px solid var(--border-color);
   text-align: center;
   color: var(--text-muted);
   font-size: 0.9rem;
   margin-top: auto;
+}
+
+/* Light mode overrides */
+[data-theme="light"] {
+  --bg-color: #f8fafc;
+  --text-color: #1e293b;
+  --text-muted: #64748b;
+  --card-bg: #ffffff;
+  --accent-color: #0284c7;
+  --accent-hover: #0369a1;
+  --border-color: #e2e8f0;
+  --code-accent: #16a34a;
+  --heading-color: #0f172a;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Discreet resume link */
+.resume-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  font-family: var(--font-mono);
+  margin-top: 1rem;
+}
+
+.resume-link:hover {
+  color: var(--text-color);
 }

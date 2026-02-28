@@ -58,21 +58,26 @@ def render_about_section(profile, education, interests):
         for l in profile['links']
     )
 
-    edu_html = '\n'.join(
-        '        <div style="margin-bottom: 1.5rem;">'
-        f'\n            <h4 style="margin: 0; font-size: 1.1rem;">{edu["degree"]}, {edu["year"]} </h4>'
-        f'\n            <div style="color: var(--accent-color); font-weight: 500; font-size: 0.95rem;">'
-        f'{edu["school"]} {"&middot; " + edu["details"] if edu.get("details") else ""} </div>'
-        '\n        </div>'
-        for edu in education
-    )
+    edu_parts = []
+    for edu in education:
+        details_html = (
+            f' &middot; <span style="font-family: var(--font-mono); color: var(--code-accent); font-size: 0.7rem;">{edu["details"]}</span>'
+            if edu.get('details') else ''
+        )
+        edu_parts.append(
+            '        <div style="margin-bottom: 0.875rem; border-left: 1px solid var(--border-color); padding-left: 0.75rem;">'
+            f'\n            <div style="font-size: 0.875rem; font-weight: 500; color: var(--text-color); line-height: 1.35;">{edu["degree"]}</div>'
+            f'\n            <div style="font-size: 0.8rem; color: var(--text-muted);">{edu["school"]}{details_html}</div>'
+            f'\n            <div style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-muted); margin-top: 0.1rem;">{edu["year"]}</div>'
+            '\n        </div>'
+        )
+    edu_html = '\n'.join(edu_parts)
 
     interests_parts = []
     for cat in interests:
         badges = ''.join(f'<span class="badge">{item}</span>' for item in cat['items'])
         interests_parts.append(
-            f'        <div style="margin-bottom: 1.5rem;">'
-            f'\n            <h4 style="margin: 0 0 0.5rem 0; font-size: 1.1rem;">{cat["category"]}</h4>'
+            f'        <div style="margin-bottom: 0.875rem;">'
             f'\n            <div class="interests-container">{badges}</div>'
             '\n        </div>'
         )
@@ -87,8 +92,8 @@ def render_about_section(profile, education, interests):
                  <div class="about-links">
 {links_html}
                  </div>
-                 <div style="margin-top: 1.5rem;">
-                    <a href="assets/pdf/Dreycey_Albin_Resume.pdf" target="_blank" class="btn btn-outline">Download Resume</a>
+                 <div>
+                    <a href="assets/pdf/Dreycey_Albin_Resume.pdf" target="_blank" class="resume-link"><i class="bi bi-file-earmark-text"></i> resume.pdf</a>
                  </div>
             </div>
             <div class="about-details">
@@ -97,11 +102,11 @@ def render_about_section(profile, education, interests):
                 <p><i class="bi bi-geo-alt"></i> {profile['location']}</p>
                 <div class="info-grid" style="margin-top: 3rem; margin-bottom: 0; padding-top: 0;">
                     <div>
-                        <h3 style="margin-top: 0;">Education</h3>
+                        <div style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-muted); letter-spacing: 0.06em; margin-bottom: 1rem;">education</div>
 {edu_html}
                     </div>
                     <div>
-                        <h3 style="margin-top: 0;">Interests &amp; Skills</h3>
+                        <div style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-muted); letter-spacing: 0.06em; margin-bottom: 1rem;">stack</div>
 {interests_html}
                     </div>
                 </div>
@@ -205,17 +210,17 @@ def render_contact_section(profile):
     for l in profile['links']:
         icon_html = f'<i class="{l["icon"]}"></i>' if l.get('icon') else ''
         link_items.append(
-            f'<a href="{l["href"]}" class="btn btn-outline" target="_blank" style="margin-bottom: 1rem;">\n'
+            f'<a href="{l["href"]}" class="btn btn-outline" target="_blank">\n'
             f'                {icon_html} {l["label"]}\n'
             f'            </a>'
         )
     links_html = ' '.join(link_items)
     return (
         '<section id="contact">\n'
-        '        <div style="text-align: center; max-width: 600px; margin: 0 auto;">\n'
+        '        <div style="text-align: center; max-width: 800px; margin: 0 auto;">\n'
         '            <h2>Contact</h2>\n'
         '            <p style="margin-bottom: 2rem;">Feel free to reach out for collaborations or questions.</p>\n'
-        '            <div class="filters" style="justify-content: center;">\n'
+        '            <div class="filters" style="justify-content: center; gap: 0.75rem;">\n'
         f'                {links_html}\n'
         '            </div>\n'
         '        </div>\n'
