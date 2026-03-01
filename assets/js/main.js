@@ -174,18 +174,19 @@ function renderExperience(experience) {
 
 window.toggleExperience = function(btn) {
     const card = btn.closest('.experience-card');
-    const list = card.querySelector('.experience-details');
-    
-    // Force toggle the class
-    if (list.style.display === 'block') {
-        list.style.display = '';
-        list.classList.remove('expanded');
-        btn.textContent = 'Show Details';
-    } else {
-        list.style.display = 'block';
-        list.classList.add('expanded');
-        btn.textContent = 'Show Less';
-    }
+    const items = card.querySelectorAll('.experience-details');
+    const isExpanded = items[0] && items[0].classList.contains('expanded');
+
+    items.forEach(item => {
+        if (isExpanded) {
+            item.style.display = '';
+            item.classList.remove('expanded');
+        } else {
+            item.style.display = 'block';
+            item.classList.add('expanded');
+        }
+    });
+    btn.textContent = isExpanded ? 'Show Details' : 'Show Less';
 }
 
 function renderFeaturedPubs(pubs) {

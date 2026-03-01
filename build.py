@@ -115,25 +115,42 @@ def render_about_section(profile, education, interests, publish_resume=False):
 
 
 def render_experience_section(experience):
-    items = []
+    # Group consecutive entries by company
+    company_groups = []
     for exp in experience:
-        is_current = 'present' in exp['period'].lower()
+        if company_groups and company_groups[-1][0] == exp['company']:
+            company_groups[-1][1].append(exp)
+        else:
+            company_groups.append((exp['company'], [exp]))
+
+    items = []
+    for company, roles in company_groups:
+        location = roles[0].get('location', '')
+        is_current = any('present' in r['period'].lower() for r in roles)
         current_class = ' current' if is_current else ''
-        level_str = f' &middot; {exp["level"]}' if exp.get('level') else ''
-        details = '\n'.join(f'                    <li>{d}</li>' for d in exp['details'])
+
+        roles_html = ''
+        for r in roles:
+            level_str = f', {r["level"]}' if r.get('level') else ''
+            desc = r.get('description', '')
+            roles_html += (
+                f'                <div style="margin-bottom: 1.25rem;">\n'
+                f'                    <div style="display: flex; justify-content: space-between; flex-wrap: wrap; margin-bottom: 0.25rem;">\n'
+                f'                        <span style="font-style: italic; color: var(--text-muted); font-size: 0.9rem;">{r["role"]}{level_str}</span>\n'
+                f'                        <span style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-muted);">{r["period"]}</span>\n'
+                f'                    </div>\n'
+                f'                    <p class="experience-details" style="color: var(--text-muted); font-size: 0.9rem; margin: 0.4rem 0 0; line-height: 1.6;">{desc}</p>\n'
+                f'                </div>\n'
+            )
+
         items.append(
             f'        <div class="experience-item{current_class}">\n'
             f'            <div class="experience-card">\n'
-            f'                <div style="display: flex; justify-content: space-between; flex-wrap: wrap; margin-bottom: 0.5rem;">\n'
-            f'                    <h3 style="margin: 0; font-size: 1.4rem;">{exp["role"]}</h3>\n'
-            f'                    <span style="color: var(--text-muted); font-weight: 600;">{exp["period"]}</span>\n'
+            f'                <div style="display: flex; justify-content: space-between; flex-wrap: wrap; margin-bottom: 0.75rem;">\n'
+            f'                    <h3 style="margin: 0; font-size: 1.1rem;">{company}</h3>\n'
+            f'                    <span style="color: var(--text-muted); font-size: 0.875rem;">{location}</span>\n'
             f'                </div>\n'
-            f'                <div style="margin-bottom: 1rem; color: var(--accent-color); font-weight: 500;">\n'
-            f'                    {exp["company"]} &middot; {exp["location"]}{level_str}\n'
-            f'                </div>\n'
-            f'                <ul class="experience-details">\n'
-            f'{details}\n'
-            f'                </ul>\n'
+            f'{roles_html}'
             f'                <button class="experience-toggle" onclick="toggleExperience(this)">Show Details</button>\n'
             f'            </div>\n'
             f'        </div>'
@@ -329,6 +346,7 @@ def generate_pub_page(pub):
     <meta property="og:url" content="{BASE_URL}/publications/{pub['id']}/">
     <meta property="og:title" content="{pub['title']} - Dreycey Albin">
     <meta property="og:description" content="{pub.get('abstract', '')}">
+    <script>try{{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);}}catch(e){{}}</script>
     <link rel="stylesheet" href="../../assets/css/base.css">
     <link rel="stylesheet" href="../../assets/css/components.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
@@ -466,6 +484,7 @@ def generate_blog_index_page(blog):
     <meta property="og:url" content="{BASE_URL}/blog/">
     <meta property="og:title" content="{name} - Dreycey Albin">
     <meta property="og:description" content="{tagline}">
+    <script>try{{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);}}catch(e){{}}</script>
     <link rel="stylesheet" href="../assets/css/base.css">
     <link rel="stylesheet" href="../assets/css/components.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">

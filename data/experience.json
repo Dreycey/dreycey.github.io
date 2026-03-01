@@ -1,43 +1,26 @@
 [
   {
     "company": "Microsoft Azure",
-    "role": "ML Software Engineer",
+    "role": "Machine Learning Engineer",
+    "level": "Level 62",
     "location": "Redmond, WA",
-    "period": "07/2023 – Present",
-    "details": [
-      "Unlocked $100M+/year in Azure CapEx and earned org-wide recognition by architecting and productizing an ML-driven CPU oversubscription capability.",
-      "Delivered ~$50M+/year in verified CapEx savings by leading technical execution of platform-wide policy changes validated through CapEx reporting.",
-      "Shipped ML inference that drives production control-plane behavior across Service Fabric microservices and legacy C# services.",
-      "Improved next-generation model quality (+6 pp offline accuracy) and production readiness by developing predictive models on large-scale time-series telemetry.",
-      "Delivered an internal RAG chatbot used for onboarding and knowledge discovery by designing the pipeline (LangChain + Semantic Kernel)."
-    ]
-  },
-  {
-    "company": "Medtronic",
-    "role": "ML Software Engineer (Contract)",
-    "location": "Boulder, CO",
-    "period": "09/2021 – 05/2022",
-    "details": [
-      "Led a small team to ship a production software stack for an autonomous catheter robot (Python backend, GUI, real-time motor control/integration).",
-      "Developed an LSTM catheter pose estimator that uses fiber-optic sensor data for real-time inference (sub 20ms/scan)."
-    ]
+    "period": "03/2025 – Present",
+    "description": "Leads high-impact ML and infrastructure work spanning capacity optimization, predictive modeling, and production serving. Built a telemetry-driven capacity mitigation system that reduced regional response times from ~1 week to ~4 hours across 50+ regions and ~1M VMs. Leading a cross-functional team on a multi-task DNN for heterogeneous resource-consumption prediction integrated into the Azure control plane with a ≤50ms SLO. Designed a distributed model delivery architecture with automated versioning, shadow/canary releases, and rollback guardrails."
   },
   {
     "company": "Microsoft Azure",
-    "role": "Data Scientist Intern",
+    "role": "Machine Learning Engineer",
+    "level": "Level 61",
     "location": "Redmond, WA",
-    "period": "06/2022 – 08/2022",
-    "details": [
-      "Enabled data-driven capacity planning for spot VMs at global fleet scale by building Power BI dashboards and using decision-tree analysis."
-    ]
+    "period": "07/2023 – 03/2025",
+    "description": "Drove platform-wide capacity policy changes with automated validation and CapEx reporting used by finance and senior leadership. Overhauled the production model evaluation framework with thresholding tradeoff analysis and backtesting across cohorts, improving model quality while preserving safety constraints."
   },
   {
-    "company": "Inscripta",
-    "role": "Computational Biologist Intern",
+    "company": "Medtronic",
+    "role": "Research Software Engineer",
+    "level": "Contract",
     "location": "Boulder, CO",
-    "period": "06/2021 – 08/2021",
-    "details": [
-      "Enabled scalable edit detection on graph-genome data by building a modular Python CLI pipeline and benchmarking alignments."
-    ]
+    "period": "09/2021 – 05/2022",
+    "description": "Developed a real-time LSTM pose estimator from fiber-optic sensor streams for surgical catheter tracking, and shipped the full production Python software stack for an autonomous catheter robot including real-time control, telemetry, and failure-safe behaviors that passed regulatory-readiness review."
   }
 ]
