@@ -3,7 +3,7 @@
   "role": "ML Software Engineer",
   "org": "Microsoft Azure",
   "location": "Redmond, WA",
-  "bio": "ML engineer bridging research and production systems. I design and validate statistical/ML/deep learning models, build experimentation and evaluation frameworks, and ship low-latency, reliable inference and data pipelines. At Microsoft Azure, I work at the intersection of modeling and distributed services on Resource Central (core control-plane ML), serving all regions and processing 1M+ requests per day.",
+  "bio": "ML engineer with roots in computational biology and a focus on bridging research and production systems. I design and validate ML/deep learning models, build experimentation frameworks, and ship low-latency inference pipelines. At Microsoft Azure, I work at the intersection of modeling and distributed services on Resource Central, serving all regions at 1M+ requests per day.",
   "links": [
     {
       "label": "Email",
