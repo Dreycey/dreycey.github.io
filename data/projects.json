@@ -14,18 +14,18 @@
     "image": "assets/img/portfolio/phagebox.png"
   },
   {
+    "name": "PhageScanner",
+    "desc": "A reconfigurable machine learning pipeline for labeling ORFs/proteins in bacteriophage genomes and metagenomic data.",
+    "href": "https://github.com/Dreycey/PhageScanner",
+    "stack": "Python",
+    "image": "assets/img/portfolio/phagescanner.png"
+  },
+  {
     "name": "PhageFilter",
     "desc": "PhageFilter uses a Sequence Bloom Tree (SBT) to filter bacteriophage reads from metagenomic files.",
     "href": "https://github.com/Dreycey/PhageBox",
     "stack": "Rust",
     "image": "assets/img/portfolio/phagefilter.png"
-  },
-  {
-    "name": "kmerCatcher",
-    "desc": "Rust-based tool for k-mer analysis.",
-    "href": "https://github.com/Dreycey/KmerCatcher",
-    "stack": "Rust",
-    "image": "assets/img/portfolio/kmercatcher.png"
   },
   {
     "name": "Metscale",
