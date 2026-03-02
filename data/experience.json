@@ -5,7 +5,7 @@
     "level": "Level 62",
     "location": "Redmond, WA",
     "period": "03/2025 – Present",
-    "description": "Drove high-impact ML and infrastructure work spanning capacity optimization, predictive modeling, and distributed systems. Designed a telemetry-driven capacity mitigation system that reduced regional response times from ~1 week to ~4 hours across 50+ regions and ~1M VMs — recognized with an org-wide Azure Impact Award. Leading a cross-functional team on a multi-task DNN for heterogeneous resource-consumption prediction integrated into the Azure control plane at ≤50ms SLO. Architected a distributed model delivery platform with automated versioning, shadow/canary releases, and rollback guardrails."
+    "description": "Drove high-impact ML and infrastructure work spanning capacity optimization, predictive modeling, and distributed systems. Designed a telemetry-driven capacity mitigation system that reduced regional response times from ~1 week to ~4 hours across 50+ regions and ~1M VMs — recognized with an org-wide Azure Impact Award. Leading a cross-functional team on a DNN for heterogeneous resource-consumption prediction integrated into the Azure control plane at ≤50ms SLO. Architected a distributed model delivery platform with automated versioning, shadow/canary releases, and rollback guardrails."
   },
   {
     "company": "Microsoft Azure",
