@@ -68,6 +68,7 @@ window.toggleTheme = function () {
         try { localStorage.setItem('theme', 'light'); } catch (e) {}
     }
     updateToggleIcon();
+    document.dispatchEvent(new CustomEvent('themechange'));
 };
 
 function updateToggleIcon() {

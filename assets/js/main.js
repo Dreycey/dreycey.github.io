@@ -2,8 +2,26 @@ document.addEventListener('DOMContentLoaded', () => {
     // Only run if we are on the home page (look for #about)
     if (!document.getElementById('about')) return;
 
+    document.addEventListener('themechange', updateProfileImage);
+    updateProfileImage();
+
     fetchData();
 });
+
+function getProfileImageSrc() {
+    const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+    return isLight ? 'assets/img/me_light.png' : 'assets/img/me.jpg';
+}
+
+function updateProfileImage() {
+    const src = getProfileImageSrc();
+
+    // Support both static prebuilt markup and JS-rendered markup.
+    const images = document.querySelectorAll('#about .about-photo img');
+    images.forEach((image) => {
+        image.src = src;
+    });
+}
 
 async function fetchData() {
     try {
@@ -69,7 +87,7 @@ function renderAbout(profile, education, interests) {
     container.innerHTML = `
         <div class="about-content">
             <div class="about-photo">
-                 <img src="assets/img/me.jpg" alt="${profile.name}">
+                 <img id="profile-image" src="${getProfileImageSrc()}" alt="${profile.name}">
                  <h1 style="font-size: 2rem; margin: 1rem 0 0.5rem;">${profile.name}</h1>
                  <p style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 1rem;">${profile.role}<br>at ${profile.org}</p>
                  <div class="about-links">
@@ -95,6 +113,8 @@ function renderAbout(profile, education, interests) {
             </div>
         </div>
     `;
+
+    updateProfileImage();
 }
 
 function renderEducation(education) {
