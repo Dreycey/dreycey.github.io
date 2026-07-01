@@ -14,7 +14,7 @@ import re
 from datetime import date
 from urllib.parse import quote
 
-BASE_URL = "https://dreycey.github.io"
+BASE_URL = "https://www.dreyceyalbin.com"
 
 
 # ── I/O helpers ───────────────────────────────────────────────────────────────
