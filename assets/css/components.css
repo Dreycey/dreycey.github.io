@@ -418,6 +418,55 @@
   margin: 0.5rem 0 1rem;
 }
 
+/* Collapsible publication abstract */
+.pub-abstract {
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+}
+
+.pub-abstract-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  width: fit-content;
+  cursor: pointer;
+  color: var(--accent-color);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  list-style: none;
+  user-select: none;
+}
+
+.pub-abstract-toggle::-webkit-details-marker {
+  display: none;
+}
+
+.pub-abstract-toggle::before {
+  content: '\25B8'; /* right-pointing triangle */
+  display: inline-block;
+  transition: transform 0.15s ease;
+}
+
+.pub-abstract[open] .pub-abstract-toggle::before {
+  transform: rotate(90deg);
+}
+
+.pub-abstract-label-less {
+  display: none;
+}
+
+.pub-abstract[open] .pub-abstract-label-more {
+  display: none;
+}
+
+.pub-abstract[open] .pub-abstract-label-less {
+  display: inline;
+}
+
+.pub-abstract-body {
+  margin-top: 0.75rem;
+}
+
 /* Badges */
 .badge {
   display: inline-block;

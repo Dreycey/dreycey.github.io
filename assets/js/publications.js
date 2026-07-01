@@ -93,9 +93,10 @@ function renderPubs() {
             <div class="pub-meta">
                 ${p.venue} ${p.year}
             </div>
-            <div class="pub-abstract" style="margin-bottom: 0.5rem; color: var(--text-color);">
-                ${p.abstract}
-            </div>
+            <details class="pub-abstract">
+                <summary class="pub-abstract-toggle"><span class="pub-abstract-label-more">Expand abstract</span><span class="pub-abstract-label-less">Hide abstract</span></summary>
+                <div class="pub-abstract-body">${p.abstract}</div>
+            </details>
             <div class="pub-links" style="margin-top:0.5rem">
                 ${p.links && p.links.paper ? `<a href="${p.links.paper}" class="btn btn-sm btn-outline" target="_blank" style="margin-right: 0.5rem;">Paper</a>` : ''}
                 ${p.links && p.links.code ? `<a href="${p.links.code}" class="btn btn-sm btn-outline" target="_blank">Code</a>` : ''}
