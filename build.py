@@ -93,7 +93,7 @@ def render_about_section(profile, education, interests, publish_resume=False):
                  <div class="about-links">
 {links_html}
                  </div>
-                 {'<div><a href="assets/pdf/Dreycey_Albin_Resume.pdf" target="_blank" class="resume-link"><i class="bi bi-file-earmark-text"></i> resume.pdf</a><span style="color: var(--border-color); margin: 0 0.35rem;">/</span><a href="assets/pdf/Dreycey_Albin_CV.pdf" target="_blank" class="resume-link">cv.pdf</a></div>' if publish_resume else ''}
+                 {'<div><a href="assets/pdf/dreyceyalbin_resume.pdf" target="_blank" class="resume-link"><i class="bi bi-file-earmark-text"></i> resume.pdf</a><span style="color: var(--border-color); margin: 0 0.35rem;">/</span><a href="assets/pdf/dreyceyalbin_cv.pdf" target="_blank" class="resume-link">cv.pdf</a></div>' if publish_resume else ''}
             </div>
             <div class="about-details">
                 <h2 style="border-bottom: none; margin-bottom: 1rem; margin-top: 0; display: block; line-height: 1;">About Me</h2>
