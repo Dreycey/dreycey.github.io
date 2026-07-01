@@ -7,7 +7,7 @@ let allPubs = [];
 
 async function initPublications() {
     try {
-        const res = await fetch('../data/publications.json');
+        const res = await fetch('../data/publications.json', { cache: 'no-store' });
         allPubs = await res.json();
         
         setupFilters();

@@ -25,13 +25,14 @@ function updateProfileImage() {
 
 async function fetchData() {
     try {
+        const opts = { cache: 'no-store' };
         const [profile, pubs, projects, experience, education, interests] = await Promise.all([
-            fetch('data/profile.json').then(r => r.json()),
-            fetch('data/publications.json').then(r => r.json()),
-            fetch('data/projects.json').then(r => r.json()),
-            fetch('data/experience.json').then(r => r.json()),
-            fetch('data/education.json').then(r => r.json()),
-            fetch('data/interests.json').then(r => r.json())
+            fetch('data/profile.json', opts).then(r => r.json()),
+            fetch('data/publications.json', opts).then(r => r.json()),
+            fetch('data/projects.json', opts).then(r => r.json()),
+            fetch('data/experience.json', opts).then(r => r.json()),
+            fetch('data/education.json', opts).then(r => r.json()),
+            fetch('data/interests.json', opts).then(r => r.json())
         ]);
 
         renderAbout(profile, education, interests);

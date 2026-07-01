@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 async function loadPublication(id) {
     try {
-        const res = await fetch('/data/publications.json');
+        const res = await fetch('/data/publications.json', { cache: 'no-store' });
         const pubs = await res.json();
         const pub = pubs.find(p => p.id === id);
         
