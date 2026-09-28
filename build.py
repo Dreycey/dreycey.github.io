@@ -21,8 +21,8 @@ OWNER_NAME_RE = re.compile(r"^Dreycey\s+(?:[A-Z]\.\s+)?Albin$")
 
 
 def bold_owner(name):
-    """Wrap the site owner's name in <strong> for author lists."""
-    return f'<strong>{name}</strong>' if OWNER_NAME_RE.match(name) else name
+    """Underline the site owner's name in author lists."""
+    return f'<u>{name}</u>' if OWNER_NAME_RE.match(name) else name
 
 
 # ── I/O helpers ───────────────────────────────────────────────────────────────

@@ -42,7 +42,7 @@ function renderPublication(pub) {
         </div>
         
         <div class="pub-authors" style="font-size: 1.1rem; margin-bottom: 1rem;">
-            <strong>Authors:</strong> ${pub.authors.map(a => `<a href="index.html?q=${encodeURIComponent(a)}">${a}</a>`).join(', ')}
+            <strong>Authors:</strong> ${pub.authors.map(a => `<a href="index.html?q=${encodeURIComponent(a)}">${/^Dreycey\s+(?:[A-Z]\.\s+)?Albin$/.test(a) ? `<u>${a}</u>` : a}</a>`).join(', ')}
         </div>
         
         <div class="pub-links" style="margin-bottom: 2rem;">

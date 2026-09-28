@@ -103,7 +103,7 @@ function renderPubs() {
     container.innerHTML = filtered.map(p => `
         <div class="pub-item">
             <a href="${p.id}/" class="pub-title">${p.title}</a>
-            <div class="pub-authors">${p.authors.map(a => /^Dreycey\s+(?:[A-Z]\.\s+)?Albin$/.test(a) ? `<strong>${a}</strong>` : a).join(', ')}</div>
+            <div class="pub-authors">${p.authors.map(a => /^Dreycey\s+(?:[A-Z]\.\s+)?Albin$/.test(a) ? `<u>${a}</u>` : a).join(', ')}</div>
             <div class="pub-meta-row">
                 <span class="pub-meta">${p.venue} ${p.year}</span>
                 <span class="pub-links">
