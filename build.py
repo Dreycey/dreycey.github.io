@@ -382,7 +382,7 @@ def generate_pub_page(pub):
             </div>
 {tags_html}
             <div style="margin-top: 3rem;">
-                <a href="/publications/">&larr; Back to Publications</a>
+                <a href="../">&larr; Back to Publications</a>
             </div>
         </div>
     </main>

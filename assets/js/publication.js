@@ -62,7 +62,7 @@ function renderPublication(pub) {
         ` : ''}
         
         <div style="margin-top: 3rem;">
-            <a href="index.html">&larr; Back to Publications</a>
+            <a href="../">&larr; Back to Publications</a>
         </div>
     `;
 }

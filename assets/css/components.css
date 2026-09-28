@@ -444,6 +444,8 @@
 .pub-abstract-body {
   margin-top: 0.75rem;
   color: var(--text-color);
+  border-left: 3px solid var(--border-color);
+  padding-left: 1rem;
 }
 
 /* Badges */
@@ -517,10 +519,18 @@
   text-decoration: none;
 }
 
-/* Publication link buttons: green in dark, blue in light (matches badges) */
+/* Publication link buttons: match the home page badge text style */
 .pub-links .btn-outline {
   color: var(--tag-accent);
   border-color: color-mix(in srgb, var(--tag-accent) 40%, transparent);
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: 0.72rem;
+  text-transform: lowercase;
+  letter-spacing: 0;
+  padding: 0.35em 0.65em;
+  border-radius: 3px;
+  line-height: 1;
 }
 
 .pub-links .btn-outline:hover {
@@ -547,6 +557,17 @@
   border-color: var(--accent-color);
   outline: 0;
   box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.15);
+}
+
+/* Normalize <select> so it matches the text input height */
+select.form-control {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.85rem center;
+  padding-right: 2.5rem;
 }
 
 .filters {

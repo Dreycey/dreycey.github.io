@@ -106,7 +106,7 @@
             </div>
             <div class="about-details">
                 <h2 style="border-bottom: none; margin-bottom: 1rem; margin-top: 0; display: block; line-height: 1;">About Me</h2>
-                <p class="lead">ML engineer with roots in computational biology and a focus on bridging research and production systems. I design and validate ML/deep learning models, build experimentation frameworks, and ship low-latency inference pipelines. At Microsoft Azure, I work at the intersection of modeling and distributed services on Resource Central, serving all regions at 1M+ requests per day.</p>
+                <p class="lead">ML engineer with roots in computational biology, focused on bridging research and production systems. I design and validate traditional machine learning and deep learning models, build experimentation frameworks, and ship low-latency inference pipelines. At Microsoft Azure, I work at the intersection of modeling and distributed systems on Resource Central, the central ML platform in the control plane, serving all regions and handling more than 1 million requests per day.</p>
                 <p><i class="bi bi-geo-alt"></i> New York City, NY</p>
                 <div class="info-grid" style="margin-top: 3rem; margin-bottom: 0; padding-top: 0;">
                     <div>
@@ -185,21 +185,21 @@
                         <span style="font-style: italic; color: var(--text-muted); font-size: 0.9rem;">Senior Machine Learning Engineer, Level 63</span>
                         <span style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-muted);">08/2026 – Present</span>
                     </div>
-                    <p class="experience-details" style="color: var(--text-muted); font-size: 0.9rem; margin: 0.4rem 0 0; line-height: 1.6;">Led a cross-functional effort to move Azure from uniform to per-VM oversubscription by predicting VM CPU utilization at creation time, a cold-start problem with no usage history. Built a LightGBM quantile regression model with a tunable risk-capacity tradeoff, holding under-prediction to ≤1% from offline validation through production, and integrated inference and reduced-core allocation into Azure control-plane and scheduler C# services under a 10ms SLO.</p>
+                    <p class="experience-details" style="color: var(--text-muted); font-size: 0.9rem; margin: 0.4rem 0 0; line-height: 1.6;">Led a cross-functional effort to move Azure from uniform to per-VM oversubscription by predicting VM CPU utilization at creation time, a cold-start problem with no usage history. Built a LightGBM quantile regression model with a tunable risk-capacity tradeoff, maintaining ≤1% under-prediction and a 10 ms inference SLO in online performance tracking. Integrated predictions across systems into the Azure scheduler and business logic, owning the full lifecycle from modeling and production inference to capacity-saving decisions.</p>
                 </div>
                 <div style="margin-bottom: 1.25rem;">
                     <div style="display: flex; justify-content: space-between; flex-wrap: wrap; margin-bottom: 0.25rem;">
                         <span style="font-style: italic; color: var(--text-muted); font-size: 0.9rem;">Machine Learning Engineer II, Level 62</span>
                         <span style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-muted);">03/2025 – 08/2026</span>
                     </div>
-                    <p class="experience-details" style="color: var(--text-muted); font-size: 0.9rem; margin: 0.4rem 0 0; line-height: 1.6;">Cut regional capacity mitigation from ~1 week to ~4 hours across 50+ regions and ~1M VMs/containers with zero customer impact via a telemetry-driven mitigation system, earning Azure Core Impact and Builders Excellence awards. Also architected a distributed framework for A/B and shadow evaluation of ML models across Resource Central (patent filed), using delayed ground truth and statistical criteria to automate model selection, canary promotion, and rollback with model versioning and deployment guardrails.</p>
+                    <p class="experience-details" style="color: var(--text-muted); font-size: 0.9rem; margin: 0.4rem 0 0; line-height: 1.6;">Cut regional capacity mitigation time from ~1 week to ~4 hours across 50+ regions and ~1M VMs/containers, with zero customer impact, by building a telemetry-driven mitigation system; earned Azure Core Impact and Builders Excellence awards. Architected a distributed framework for automated A/B and shadow evaluation of candidate ML models across Resource Central; patent filed.</p>
                 </div>
                 <div style="margin-bottom: 1.25rem;">
                     <div style="display: flex; justify-content: space-between; flex-wrap: wrap; margin-bottom: 0.25rem;">
                         <span style="font-style: italic; color: var(--text-muted); font-size: 0.9rem;">Machine Learning Engineer II, Level 61</span>
                         <span style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-muted);">07/2023 – 03/2025</span>
                     </div>
-                    <p class="experience-details" style="color: var(--text-muted); font-size: 0.9rem; margin: 0.4rem 0 0; line-height: 1.6;">Drove platform-wide policy changes that increased Azure server-packing efficiency: forecasted fleet-wide impact from telemetry, led staged production validation, and built reporting on realized savings and operational risk for finance and senior leadership.</p>
+                    <p class="experience-details" style="color: var(--text-muted); font-size: 0.9rem; margin: 0.4rem 0 0; line-height: 1.6;">Drove platform-wide changes that improved Azure server-packing efficiency through intelligent, safe overpacking of internal workloads. The project required forecasting fleet-wide impact from historical signals to balance expected savings against operational risk, followed by staged production validation and pipelines to measure realized savings for senior leadership.</p>
                 </div>
                 <button class="experience-toggle" onclick="toggleExperience(this)">Show Details</button>
             </div>
