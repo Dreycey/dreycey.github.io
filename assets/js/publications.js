@@ -3,6 +3,20 @@ document.addEventListener('DOMContentLoaded', () => {
     initPublications();
 });
 
+// Toggle publication abstracts (delegated so it works for both
+// JS-rendered and pre-rendered/static list items).
+document.addEventListener('click', (e) => {
+    const btn = e.target.closest('.pub-abstract-btn');
+    if (!btn) return;
+    const item = btn.closest('.pub-item');
+    const body = item && item.querySelector('.pub-abstract-body');
+    if (!body) return;
+    const willShow = body.hasAttribute('hidden');
+    body.toggleAttribute('hidden', !willShow);
+    btn.setAttribute('aria-expanded', String(willShow));
+    btn.textContent = willShow ? 'Hide Abstract' : 'Abstract';
+});
+
 let allPubs = [];
 
 async function initPublications() {
@@ -89,18 +103,16 @@ function renderPubs() {
     container.innerHTML = filtered.map(p => `
         <div class="pub-item">
             <a href="${p.id}/" class="pub-title">${p.title}</a>
-            <div class="pub-authors">${p.authors.join(', ')}</div>
-            <div class="pub-meta">
-                ${p.venue} ${p.year}
+            <div class="pub-authors">${p.authors.map(a => /^Dreycey\s+(?:[A-Z]\.\s+)?Albin$/.test(a) ? `<strong>${a}</strong>` : a).join(', ')}</div>
+            <div class="pub-meta-row">
+                <span class="pub-meta">${p.venue} ${p.year}</span>
+                <span class="pub-links">
+                    <button type="button" class="btn btn-sm btn-outline pub-abstract-btn" aria-expanded="false">Abstract</button>
+                    ${p.links && p.links.paper ? `<a href="${p.links.paper}" class="btn btn-sm btn-outline" target="_blank">Paper</a>` : ''}
+                    ${p.links && p.links.code ? `<a href="${p.links.code}" class="btn btn-sm btn-outline" target="_blank">Code</a>` : ''}
+                </span>
             </div>
-            <details class="pub-abstract">
-                <summary class="pub-abstract-toggle"><span class="pub-abstract-label-more">Expand abstract</span><span class="pub-abstract-label-less">Hide abstract</span></summary>
-                <div class="pub-abstract-body">${p.abstract}</div>
-            </details>
-            <div class="pub-links" style="margin-top:0.5rem">
-                ${p.links && p.links.paper ? `<a href="${p.links.paper}" class="btn btn-sm btn-outline" target="_blank" style="margin-right: 0.5rem;">Paper</a>` : ''}
-                ${p.links && p.links.code ? `<a href="${p.links.code}" class="btn btn-sm btn-outline" target="_blank">Code</a>` : ''}
-            </div>
+            <div class="pub-abstract-body" hidden>${p.abstract}</div>
         </div>
     `).join('');
 }

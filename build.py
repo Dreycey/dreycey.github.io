@@ -16,6 +16,14 @@ from urllib.parse import quote
 
 BASE_URL = "https://www.dreyceyalbin.com"
 
+OWNER_NAME = "Dreycey Albin"
+OWNER_NAME_RE = re.compile(r"^Dreycey\s+(?:[A-Z]\.\s+)?Albin$")
+
+
+def bold_owner(name):
+    """Wrap the site owner's name in <strong> for author lists."""
+    return f'<strong>{name}</strong>' if OWNER_NAME_RE.match(name) else name
+
 
 # ── I/O helpers ───────────────────────────────────────────────────────────────
 
@@ -62,7 +70,7 @@ def render_about_section(profile, education, interests, publish_resume=False):
     edu_parts = []
     for edu in education:
         details_html = (
-            f' &middot; <span style="font-family: var(--font-mono); color: var(--code-accent); font-size: 0.7rem;">{edu["details"]}</span>'
+            f' &middot; <span style="font-family: var(--font-mono); color: var(--tag-accent); font-size: 0.7rem;">{edu["details"]}</span>'
             if edu.get('details') else ''
         )
         edu_parts.append(
@@ -176,13 +184,10 @@ def render_featured_pubs_section(pubs):
         items.append(
             f'        <div class="pub-item">\n'
             f'            <a href="publications/{p["id"]}/" class="pub-title">{p["title"]}</a>\n'
-            f'            <div class="pub-authors">{", ".join(p["authors"])}</div>\n'
-            f'            <div class="pub-meta">\n'
-            f'                {p["venue"]} {p["year"]}\n'
-            f'                <span class="badge badge-primary">{p["type"]}</span>\n'
-            f'            </div>\n'
-            f'            <div class="pub-links">\n'
-            f'                {links}\n'
+            f'            <div class="pub-authors">{", ".join(bold_owner(a) for a in p["authors"])}</div>\n'
+            f'            <div class="pub-meta-row">\n'
+            f'                <span class="pub-meta">{p["venue"]} {p["year"]}</span>\n'
+            f'                <span class="pub-links">{links}</span>\n'
             f'            </div>\n'
             f'        </div>'
         )
@@ -313,7 +318,7 @@ def scholarly_article_jsonld(pub):
 
 def generate_pub_page(pub):
     authors_html = ', '.join(
-        f'<a href="/publications/?q={quote(a)}">{a}</a>'
+        f'<a href="/publications/?q={quote(a)}">{bold_owner(a)}</a>'
         for a in pub['authors']
     )
     links_html = ''.join(
@@ -347,6 +352,7 @@ def generate_pub_page(pub):
     <meta property="og:title" content="{pub['title']} - Dreycey Albin">
     <meta property="og:description" content="{pub.get('abstract', '')}">
     <script>try{{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);}}catch(e){{}}</script>
+    <link rel="icon" type="image/png" href="../../assets/favicon.png">
     <link rel="stylesheet" href="../../assets/css/base.css">
     <link rel="stylesheet" href="../../assets/css/components.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
@@ -398,7 +404,7 @@ def render_pub_list(pubs):
     for p in sorted_pubs:
         paper_btn = (
             f'<a href="{p["links"]["paper"]}" class="btn btn-sm btn-outline"'
-            f' target="_blank" style="margin-right: 0.5rem;">Paper</a>'
+            f' target="_blank">Paper</a>'
             if p.get('links', {}).get('paper') else ''
         )
         code_btn = (
@@ -408,17 +414,12 @@ def render_pub_list(pubs):
         items.append(
             f'        <div class="pub-item">\n'
             f'            <a href="{p["id"]}/" class="pub-title">{p["title"]}</a>\n'
-            f'            <div class="pub-authors">{", ".join(p["authors"])}</div>\n'
-            f'            <div class="pub-meta">\n'
-            f'                {p["venue"]} {p["year"]}\n'
+            f'            <div class="pub-authors">{", ".join(bold_owner(a) for a in p["authors"])}</div>\n'
+            f'            <div class="pub-meta-row">\n'
+            f'                <span class="pub-meta">{p["venue"]} {p["year"]}</span>\n'
+            f'                <span class="pub-links"><button type="button" class="btn btn-sm btn-outline pub-abstract-btn" aria-expanded="false">Abstract</button>{paper_btn}{code_btn}</span>\n'
             f'            </div>\n'
-            f'            <details class="pub-abstract">\n'
-            f'                <summary class="pub-abstract-toggle"><span class="pub-abstract-label-more">Expand abstract</span><span class="pub-abstract-label-less">Hide abstract</span></summary>\n'
-            f'                <div class="pub-abstract-body">{p.get("abstract", "")}</div>\n'
-            f'            </details>\n'
-            f'            <div class="pub-links" style="margin-top:0.5rem">\n'
-            f'                {paper_btn}{code_btn}\n'
-            f'            </div>\n'
+            f'            <div class="pub-abstract-body" hidden>{p.get("abstract", "")}</div>\n'
             f'        </div>'
         )
     return (
@@ -486,6 +487,7 @@ def generate_blog_index_page(blog):
     <meta property="og:title" content="{name} - Dreycey Albin">
     <meta property="og:description" content="{tagline}">
     <script>try{{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);}}catch(e){{}}</script>
+    <link rel="icon" type="image/png" href="../assets/favicon.png">
     <link rel="stylesheet" href="../assets/css/base.css">
     <link rel="stylesheet" href="../assets/css/components.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">

@@ -216,8 +216,8 @@
 .experience-toggle {
   display: block;
   background: none;
-  border: 1px solid var(--border-color);
-  color: var(--accent-color);
+  border: 1px solid color-mix(in srgb, var(--tag-accent) 40%, transparent);
+  color: var(--tag-accent);
   cursor: pointer;
   font-family: var(--font-sub);
   font-size: 0.9rem;
@@ -230,8 +230,9 @@
 }
 
 .experience-toggle:hover {
-  background-color: var(--accent-color);
-  color: #0f172a;
+  background-color: var(--tag-accent);
+  border-color: var(--tag-accent);
+  color: var(--bg-color);
 }
 
 .experience-details {
@@ -279,13 +280,13 @@
   width: 0.625rem;
   height: 0.625rem;
   background: var(--card-bg);
-  border: 2px solid var(--accent-color);
+  border: 2px solid var(--tag-accent);
   border-radius: 50%;
   z-index: 1;
 }
 
 .experience-item.current::before {
-  background: var(--accent-color);
+  background: var(--tag-accent);
 }
 
 .experience-card {
@@ -376,7 +377,7 @@
 
 .card small {
   font-family: var(--font-mono);
-  color: var(--code-accent);
+  color: var(--tag-accent);
   font-size: 0.75rem;
 }
 
@@ -417,53 +418,32 @@
   margin: 0.5rem 0 1rem;
 }
 
-/* Collapsible publication abstract */
+.pub-meta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.pub-meta-row .pub-meta {
+  margin: 0.5rem 0;
+}
+
+.pub-meta-row .pub-links {
+  display: inline-flex;
+  gap: 0.5rem;
+}
+
+/* Publication abstract (static block on detail pages; toggled body in list) */
 .pub-abstract {
   margin-bottom: 0.5rem;
   color: var(--text-color);
 }
 
-.pub-abstract-toggle {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  width: fit-content;
-  cursor: pointer;
-  color: var(--accent-color);
-  font-family: var(--font-mono);
-  font-size: 0.85rem;
-  list-style: none;
-  user-select: none;
-}
-
-.pub-abstract-toggle::-webkit-details-marker {
-  display: none;
-}
-
-.pub-abstract-toggle::before {
-  content: '\25B8'; /* right-pointing triangle */
-  display: inline-block;
-  transition: transform 0.15s ease;
-}
-
-.pub-abstract[open] .pub-abstract-toggle::before {
-  transform: rotate(90deg);
-}
-
-.pub-abstract-label-less {
-  display: none;
-}
-
-.pub-abstract[open] .pub-abstract-label-more {
-  display: none;
-}
-
-.pub-abstract[open] .pub-abstract-label-less {
-  display: inline;
-}
-
 .pub-abstract-body {
   margin-top: 0.75rem;
+  color: var(--text-color);
 }
 
 /* Badges */
@@ -479,8 +459,8 @@
   vertical-align: baseline;
   border-radius: 3px;
   background: transparent;
-  color: var(--code-accent);
-  border: 1px solid rgba(74, 222, 128, 0.25);
+  color: var(--tag-accent);
+  border: 1px solid color-mix(in srgb, var(--tag-accent) 30%, transparent);
   margin-right: 0.5rem;
   letter-spacing: 0;
   text-transform: lowercase;
@@ -535,6 +515,18 @@
   background-color: var(--text-color);
   color: var(--bg-color);
   text-decoration: none;
+}
+
+/* Publication link buttons: green in dark, blue in light (matches badges) */
+.pub-links .btn-outline {
+  color: var(--tag-accent);
+  border-color: color-mix(in srgb, var(--tag-accent) 40%, transparent);
+}
+
+.pub-links .btn-outline:hover {
+  background-color: var(--tag-accent);
+  border-color: var(--tag-accent);
+  color: var(--bg-color);
 }
 
 /* Forms */

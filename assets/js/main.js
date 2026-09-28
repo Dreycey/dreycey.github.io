@@ -71,7 +71,7 @@ function renderAbout(profile, education, interests) {
     const eduHtml = education.map(edu => `
         <div style="margin-bottom: 0.875rem; border-left: 1px solid var(--border-color); padding-left: 0.75rem;">
             <div style="font-size: 0.875rem; font-weight: 500; color: var(--text-color); line-height: 1.35;">${edu.degree}</div>
-            <div style="font-size: 0.8rem; color: var(--text-muted);">${edu.school}${edu.details ? ` &middot; <span style="font-family: var(--font-mono); color: var(--code-accent); font-size: 0.7rem;">${edu.details}</span>` : ''}</div>
+            <div style="font-size: 0.8rem; color: var(--text-muted);">${edu.school}${edu.details ? ` &middot; <span style="font-family: var(--font-mono); color: var(--tag-accent); font-size: 0.7rem;">${edu.details}</span>` : ''}</div>
             <div style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-muted); margin-top: 0.1rem;">${edu.year}</div>
         </div>
     `).join('');
@@ -219,13 +219,12 @@ function renderFeaturedPubs(pubs) {
     const html = featured.map(p => `
         <div class="pub-item">
             <a href="publications/${p.id}/" class="pub-title">${p.title}</a>
-            <div class="pub-authors">${p.authors.join(', ')}</div>
-            <div class="pub-meta">
-                ${p.venue} ${p.year}
-                <span class="badge badge-primary">${p.type}</span>
-            </div>
-            <div class="pub-links">
+            <div class="pub-authors">${p.authors.map(a => /^Dreycey\s+(?:[A-Z]\.\s+)?Albin$/.test(a) ? `<strong>${a}</strong>` : a).join(', ')}</div>
+            <div class="pub-meta-row">
+                <span class="pub-meta">${p.venue} ${p.year}</span>
+                <span class="pub-links">
                 ${Object.entries(p.links || {}).map(([k, v]) => `<a href="${v}" class="badge">${k}</a>`).join('')}
+                </span>
             </div>
         </div>
     `).join('');

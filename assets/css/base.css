@@ -9,6 +9,7 @@
   --accent-hover: #0ea5e9;
   --border-color: #334155;
   --code-accent: #4ade80;
+  --tag-accent: var(--code-accent);
   --heading-color: #f1f5f9;
   --max-width: 1400px;
   --header-height: 70px;
@@ -145,6 +146,7 @@ section {
   --accent-hover: #0369a1;
   --border-color: #e2e8f0;
   --code-accent: #16a34a;
+  --tag-accent: var(--accent-color);
   --heading-color: #0f172a;
   --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
   --shadow-md: 0 4px 12px rgba(0,0,0,0.15);

@@ -3,25 +3,25 @@
     "company": "Microsoft Azure",
     "role": "Senior Machine Learning Engineer",
     "level": "Level 63",
-    "location": "Redmond, WA",
+    "location": "New York, NY",
     "period": "08/2026 – Present",
-    "description": "Leading a cross-functional team on a risk-adjusted LightGBM quantile regression model for heterogeneous resource-consumption prediction integrated into the Azure control plane at ≤10ms SLO. Architected a distributed model delivery platform with automated versioning, shadow/canary releases, and rollback guardrails."
+    "description": "Led a cross-functional effort to move Azure from uniform to per-VM oversubscription by predicting VM CPU utilization at creation time, a cold-start problem with no usage history. Built a LightGBM quantile regression model with a tunable risk-capacity tradeoff, holding under-prediction to ≤1% from offline validation through production, and integrated inference and reduced-core allocation into Azure control-plane and scheduler C# services under a 10ms SLO."
   },
   {
     "company": "Microsoft Azure",
-    "role": "Machine Learning Engineer",
+    "role": "Machine Learning Engineer II",
     "level": "Level 62",
-    "location": "Redmond, WA",
+    "location": "New York, NY",
     "period": "03/2025 – 08/2026",
-    "description": "Drove high-impact ML and infrastructure work spanning capacity optimization, predictive modeling, and distributed systems. Designed a telemetry-driven capacity mitigation system that reduced regional response times from ~1 week to ~4 hours across 50+ regions and ~1M VMs, recognized with an org-wide Azure Impact Award."
+    "description": "Cut regional capacity mitigation from ~1 week to ~4 hours across 50+ regions and ~1M VMs/containers with zero customer impact via a telemetry-driven mitigation system, earning Azure Core Impact and Builders Excellence awards. Also architected a distributed framework for A/B and shadow evaluation of ML models across Resource Central (patent filed), using delayed ground truth and statistical criteria to automate model selection, canary promotion, and rollback with model versioning and deployment guardrails."
   },
   {
     "company": "Microsoft Azure",
-    "role": "Machine Learning Engineer",
+    "role": "Machine Learning Engineer II",
     "level": "Level 61",
-    "location": "Redmond, WA",
+    "location": "New York, NY",
     "period": "07/2023 – 03/2025",
-    "description": "Drove platform-wide capacity policy changes with automated validation and CapEx reporting used by finance and senior leadership. Overhauled the production model evaluation framework with thresholding tradeoff analysis and backtesting across cohorts, improving model quality while preserving safety constraints."
+    "description": "Drove platform-wide policy changes that increased Azure server-packing efficiency: forecasted fleet-wide impact from telemetry, led staged production validation, and built reporting on realized savings and operational risk for finance and senior leadership."
   },
   {
     "company": "Medtronic",
