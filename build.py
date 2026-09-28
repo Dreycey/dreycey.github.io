@@ -142,12 +142,12 @@ def render_experience_section(experience):
             level_str = f', {r["level"]}' if r.get('level') else ''
             desc = r.get('description', '')
             roles_html += (
-                f'                <div style="margin-bottom: 1.25rem;">\n'
+                f'                <div style="margin-bottom: 0;">\n'
                 f'                    <div style="display: flex; justify-content: space-between; flex-wrap: wrap; margin-bottom: 0.25rem;">\n'
                 f'                        <span style="font-style: italic; color: var(--text-muted); font-size: 0.9rem;">{r["role"]}{level_str}</span>\n'
                 f'                        <span style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-muted);">{r["period"]}</span>\n'
                 f'                    </div>\n'
-                f'                    <p class="experience-details" style="color: var(--text-muted); font-size: 0.9rem; margin: 0.4rem 0 0; line-height: 1.6;">{desc}</p>\n'
+                f'                    <p class="experience-details" style="color: var(--text-muted); font-size: 0.9rem; margin: 0.4rem 0 0.9rem; line-height: 1.6;">{desc}</p>\n'
                 f'                </div>\n'
             )
 

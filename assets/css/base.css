@@ -83,7 +83,12 @@ p {
 }
 
 section {
-  padding: 2.5rem 0;
+  padding: 0.5rem 0;
+}
+
+/* Keep breathing room between the sticky header and the first section */
+#about {
+  padding-top: 2rem;
 }
 
 @media (max-width: 768px) {
@@ -92,7 +97,7 @@ section {
   }
 
   section {
-    padding: 2rem 0;
+    padding: 0.5rem 0;
   }
 
   h1 { font-size: 2rem; }
