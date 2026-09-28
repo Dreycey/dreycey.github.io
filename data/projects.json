@@ -29,21 +29,21 @@
   },
   {
     "name": "Metscale",
-    "desc": "Metagenomics analysis workflow.",
+    "desc": "MetScale performs metagenome comparison estimates, taxonomic classifications, and functional predictions on metagenomic data",
     "href": "https://github.com/signaturescience/metscale",
     "stack": "Snakemake / Python",
     "image": "assets/img/portfolio/metscale.png"
   },
   {
     "name": "SeqScreen",
-    "desc": "Sequence screening pipeline.",
+    "desc": "SeqScreen sensitively assigns taxonomic classifications and functional annotations to short and long (ont) DNA sequences.",
     "href": "https://gitlab.com/treangenlab/seqscreen",
     "stack": "Python / Bash / Nextflow",
     "image": "assets/img/portfolio/seqscreen.png"
   },
   {
     "name": "Kvar",
-    "desc": "Bioinformatics tool.",
+    "desc": "A pipeline for finding disease-associated kmers in genomic data",
     "href": "https://github.com/collaborativebioinformatics/kvar",
     "stack": "Bash / Python / R",
     "image": "assets/img/portfolio/kvar.png"

@@ -267,11 +267,15 @@
   margin-bottom: 3rem;
 }
 
+.experience-item:last-child {
+  margin-bottom: 0;
+}
+
 .experience-item::before {
   content: "";
   position: absolute;
   left: -2.6rem;
-  top: 2.5rem; /* Align with the card header instead of centering */
+  top: 0.5rem; /* Align with the role title */
   width: 0.625rem;
   height: 0.625rem;
   background: var(--card-bg);
@@ -285,15 +289,10 @@
 }
 
 .experience-card {
-  background: var(--card-bg);
-  border-radius: 4px;
-  padding: 2rem;
-  border: 1px solid var(--border-color);
-  transition: border-color 0.2s;
-}
-
-.experience-card:hover {
-  border-color: var(--accent-color);
+  background: transparent;
+  border-radius: 0;
+  padding: 0;
+  border: none;
 }
 
 .experience-details {
@@ -383,17 +382,17 @@
 
 /* Publications */
 .pub-item {
-  background: var(--card-bg);
-  padding: 2rem;
-  border-radius: var(--border-radius);
-  margin-bottom: 1.5rem;
+  background: transparent;
+  padding: 1.5rem 0;
+  border-radius: 0;
+  margin-bottom: 0;
   box-shadow: none;
-  border: 1px solid var(--border-color);
-  transition: border-color 0.2s;
+  border: none;
+  border-bottom: 1px solid var(--border-color);
 }
 
-.pub-item:hover {
-  border-color: var(--accent-color);
+.pub-item:last-child {
+  border-bottom: none;
 }
 
 .pub-title {

@@ -82,7 +82,7 @@ p {
 }
 
 section {
-  padding: 4rem 0;
+  padding: 2.5rem 0;
 }
 
 @media (max-width: 768px) {
@@ -91,7 +91,7 @@ section {
   }
 
   section {
-    padding: 3rem 0;
+    padding: 2rem 0;
   }
 
   h1 { font-size: 2rem; }
