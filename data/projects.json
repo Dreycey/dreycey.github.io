@@ -23,7 +23,7 @@
   {
     "name": "PhageFilter",
     "desc": "PhageFilter uses a Sequence Bloom Tree (SBT) to filter bacteriophage reads from metagenomic files.",
-    "href": "https://github.com/Dreycey/PhageBox",
+    "href": "https://github.com/Dreycey/PhageFilter",
     "stack": "Rust",
     "image": "assets/img/portfolio/phagefilter.png"
   },

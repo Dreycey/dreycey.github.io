@@ -29,6 +29,6 @@
     "level": "Contract",
     "location": "Boulder, CO",
     "period": "09/2021 – 05/2022",
-    "description": "Developed a real-time LSTM pose estimator from fiber-optic sensor streams for surgical catheter tracking, and shipped the full production Python software stack for an autonomous catheter robot including real-time control, telemetry, and failure-safe behaviors that passed regulatory-readiness review."
+    "description": "Built a real-time LSTM pose estimator from fiber-optic sensor streams for surgical catheter tracking (under 20 ms inference), and shipped the full Python stack for an autonomous catheter robot (clinical GUI, real-time control, telemetry, fail-safes) that helped secure additional internal R&D funding."
   }
 ]
