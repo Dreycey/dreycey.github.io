@@ -348,6 +348,23 @@
   background-color: var(--card-bg);
 }
 
+/* Shrink project cards on mid-size and wide desktop screens */
+@media (min-width: 769px) {
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .card {
+    padding: 1.25rem;
+  }
+
+  .card img {
+    height: 140px;
+    margin-bottom: 1rem;
+  }
+}
+
 /* Mobile adjustments for cards */
 @media (max-width: 768px) {
   .card img {
@@ -366,7 +383,7 @@
 
 .card h3 {
   font-size: 1.25rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0;
 }
 
 .card h3 a {
@@ -380,7 +397,7 @@
 .card p {
   color: var(--text-muted);
   font-size: 0.95rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0;
   flex-grow: 1;
 }
 

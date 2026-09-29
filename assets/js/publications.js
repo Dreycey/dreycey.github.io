@@ -31,7 +31,8 @@ async function initPublications() {
         // Listeners
         document.getElementById('q').addEventListener('input', handleFilterChange);
         document.getElementById('year').addEventListener('change', handleFilterChange);
-        document.getElementById('type').addEventListener('change', handleFilterChange);
+        const typeSelect = document.getElementById('type');
+        if (typeSelect) typeSelect.addEventListener('change', handleFilterChange);
         
     } catch (e) {
         console.error('Error loading publications:', e);
@@ -83,7 +84,8 @@ function renderPubs() {
     const filtered = allPubs.filter(p => {
         const matchesQ = !q || 
             p.title.toLowerCase().includes(q) || 
-            p.authors.some(a => a.toLowerCase().includes(q));
+            p.authors.some(a => a.toLowerCase().includes(q)) ||
+            (p.tags || []).some(t => t.toLowerCase().includes(q));
             
         const matchesYear = !year || p.year.toString() === year;
         
