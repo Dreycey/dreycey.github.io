@@ -4,31 +4,27 @@
     "role": "Senior Machine Learning Engineer",
     "level": "Level 63",
     "location": "New York, NY",
-    "period": "08/2026 – Present",
-    "description": "Led a cross-functional effort to move Azure from uniform to per-VM oversubscription by predicting VM CPU utilization at creation time, a cold-start problem with no usage history. Built a LightGBM quantile regression model with a tunable risk-capacity tradeoff, maintaining ≤1% under-prediction and a 10 ms inference SLO in online performance tracking. Integrated predictions across systems into the Azure scheduler and business logic, owning the full lifecycle from modeling and production inference to capacity-saving decisions."
+    "period": "08/2026 – Present"
   },
   {
     "company": "Microsoft Azure",
     "role": "Machine Learning Engineer II",
     "level": "Level 62",
     "location": "New York, NY",
-    "period": "03/2025 – 08/2026",
-    "description": "Cut regional capacity mitigation time from ~1 week to ~4 hours across 50+ regions and ~1M VMs/containers, with zero customer impact, by building a telemetry-driven mitigation system; earned Azure Core Impact and Builders Excellence awards. Architected a distributed framework for automated A/B and shadow evaluation of candidate ML models across Resource Central; patent filed."
+    "period": "03/2025 – 08/2026"
   },
   {
     "company": "Microsoft Azure",
     "role": "Machine Learning Engineer II",
     "level": "Level 61",
     "location": "New York, NY",
-    "period": "05/2023 – 03/2025",
-    "description": "Drove platform-wide changes that improved Azure server-packing efficiency through intelligent, safe overpacking of internal workloads. The project required forecasting fleet-wide impact from historical signals to balance expected savings against operational risk, followed by staged production validation and pipelines to measure realized savings for senior leadership."
+    "period": "05/2023 – 03/2025"
   },
   {
     "company": "Medtronic",
     "role": "Research Engineer",
     "level": "Contract",
     "location": "Boulder, CO",
-    "period": "09/2021 – 05/2022",
-    "description": "Built a real-time LSTM pose estimator from fiber-optic sensor streams for surgical catheter tracking (under 20 ms inference), and shipped the full Python stack for an autonomous catheter robot (clinical GUI, real-time control, telemetry, fail-safes) that helped secure additional internal R&D funding."
+    "period": "09/2021 – 05/2022"
   }
 ]

@@ -138,17 +138,30 @@ def render_experience_section(experience):
         current_class = ' current' if is_current else ''
 
         roles_html = ''
+        has_desc = False
         for r in roles:
             level_str = f', {r["level"]}' if r.get('level') else ''
             desc = r.get('description', '')
+            desc_html = ''
+            if desc:
+                has_desc = True
+                desc_html = (
+                    f'                    <p class="experience-details" style="color: var(--text-muted); font-size: 0.9rem; margin: 0.4rem 0 0.9rem; line-height: 1.6;">{desc}</p>\n'
+                )
             roles_html += (
                 f'                <div style="margin-bottom: 0;">\n'
                 f'                    <div style="display: flex; justify-content: space-between; flex-wrap: wrap; margin-bottom: 0.25rem;">\n'
                 f'                        <span style="font-style: italic; color: var(--text-muted); font-size: 0.9rem;">{r["role"]}{level_str}</span>\n'
                 f'                        <span style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-muted);">{r["period"]}</span>\n'
                 f'                    </div>\n'
-                f'                    <p class="experience-details" style="color: var(--text-muted); font-size: 0.9rem; margin: 0.4rem 0 0.9rem; line-height: 1.6;">{desc}</p>\n'
+                f'{desc_html}'
                 f'                </div>\n'
+            )
+
+        toggle_html = ''
+        if has_desc:
+            toggle_html = (
+                f'                <button class="experience-toggle" onclick="toggleExperience(this)">Show Details</button>\n'
             )
 
         items.append(
@@ -159,7 +172,7 @@ def render_experience_section(experience):
             f'                    <span style="color: var(--text-muted); font-size: 0.875rem;">{location}</span>\n'
             f'                </div>\n'
             f'{roles_html}'
-            f'                <button class="experience-toggle" onclick="toggleExperience(this)">Show Details</button>\n'
+            f'{toggle_html}'
             f'            </div>\n'
             f'        </div>'
         )
